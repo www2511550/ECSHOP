@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加属性</title>
+	<hdjs />	
+</head>
+<body>
+<div class="wrap">
+	<div class='menu_list'>
+		<ul>
+			<li>
+				<a href="{|U:'index'}">属性列表</a>
+			</li>
+		</ul>
+	</div>
+	<div class="title-header">添加属性</div>
+	<form action="" method="post">	
+		<table class="table2 hd-form">
+			<tr>
+				<th class="w100 h20">属性名称</th>
+				<td><input type="text" name="attr_name"></td>
+			</tr>
+			<tr>
+				<th class="w100">商品类型</th>
+				<td>
+					<select name="cat_id" class="w100 h20" style="text-align:center">
+					<list from='$goods_type' name='$gt'>
+						<option value="{$gt.cat_id}" <if value="{$gt.cat_id}==Q('cat_id')">selected=''</if> >
+						{$gt.cat_name}</option>
+					</list>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th class="w100">属性类型</th>
+				<td>
+					<label><input type="radio" value="0" name="attr_type" checked="">普通属性</label>
+					<label><input type="radio" value="1" name="attr_type">规格属性</label>
+					<span style='color:#aaa'>普通属性只能录入值，规格属性可以设置价格比如颜色、尺码 </span>
+				</td>
+			</tr>
+			<tr>
+				<th class="w100">录入方式</th>
+				<td>
+					<label><input type="radio" value="0" name="attr_input_type" checked="">文本输入</label>
+					<label><input type="radio" value="1" name="attr_input_type">下拉列表框</label>
+					<label><input type="radio" value="2" name="attr_input_type">文本框</label>
+					<span style='color:#aaa'>选择下拉列表框时必须输入默认值 </span>
+				</td>
+			</tr>
+			<tr>
+				<th class="w100">属性值</th>
+				<td>
+					<textarea name="attr_value" class="w200 h80" disabled=""></textarea>
+					<span>一行输入一个值</span>
+				</td>
+			</tr>
+		</table>
+		<input type="submit" class="hd-success" value="添加">
+	</form>
+	<js file='__CONTROLLER_VIEW__/Js/js.js'/>
+</div>
+</body>
+</html>

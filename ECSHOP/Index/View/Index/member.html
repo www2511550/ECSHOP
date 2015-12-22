@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>会员中心</title>
+	<link rel="stylesheet" href="__CONTROLLER_VIEW__/css/member.css">
+	<link rel="stylesheet" href="__CONTROLLER_VIEW__/css/header_bottom.css">
+	<hdjs/>
+	<script type="text/javascript" src='__CONTROLLER_VIEW__/js/index.js'></script>
+</head>
+<body>
+<!-- 头部区块 -->
+<include file='__CONTROLLER_VIEW__/block/header.html'/>
+<!-- 头部区块结束 -->
+
+<!-- 路径 -->
+<div class="position">
+	<i>你现在的位置 :</i> <a href="">首页</a><span> > </span>个人中心
+</div>
+<!-- 路径 -->
+<!-- 中间大区 -->
+<div class="main_out">
+	<!-- 左边列表区块 -->
+	<div class="left">
+		<div class="l_title">
+			会员中心
+		</div>
+		<div class="list">
+			<ul>
+				<li><h3>订单中心</h3></li>
+				<li><a href="">> 我的订单</a></li>
+			</ul>
+			<ul>
+				<li><h3>个人中心</h3></li>
+				<li><a href="">> 会员中心</a></li>
+				<li><a href="">> 我的关注</a></li>
+				<li><a href="">> 账户余额</a></li>
+			</ul>
+			<ul>
+				<li><h3>社区中心</h3></li>
+				<li><a href="">> 商品评价</a></li>
+				<li><a href="">> 站内信</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 左边列表区块结束 -->
+<if value="!{$data}" >
+	<!-- 右边区块 -->
+	<div class="right">
+		<div class="pic">
+			<img src="__CONTROLLER_VIEW__/images/member/pic_vip.jpg" alt="">
+		</div>
+
+		<div class="r_list">
+			<table>
+				<thead>
+					<tr>
+						<th><span>{$_SESSION['username']}</span> 欢迎您！</th>
+						<td></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>我的经验值 :</th>
+						<td><span>0</span></td>
+					</tr>
+					<tr>
+						<th>我的特权 :</th>
+						<td>无</td>
+					</tr>
+					<tr>
+						<th>优惠卷 :</th>
+						<td><span>0</span>张</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- 订单消息 -->
+		<!-- 欢迎界面 -->
+		<div class="msg">
+			<dl>
+				<dt>订单中心: </dt>
+				<dd><a href="">处理中的订单(<span>0</span>)</a></dd>
+				<dd><a href="">待评价的商品(<span>0</span>)</a></dd>
+			</dl>
+			<dl>
+				<dt>站内消息: </dt>
+				<dd><a href="">新消息(<span>0</span>)</a></dd>
+			</dl>
+		</div>
+		<!-- 欢迎界面结束 -->
+	</div>
+	<!-- 右边区块结束 -->
+<else>
+
+	<!-- 我的预约 -->
+	<div class="yuyue">
+		<div class="title"><h3>我的订单</h3></div>
+		<table width="100%">
+			<thead style="background:#D6D6D6;">
+				<tr>
+					<th width="350px">商品及订单号</th>
+					<th width="110px">单价/元</th>
+					<th width="110px">数量</th>
+					<th>实付款/元</th>
+					<th>订单状态及操作</th>
+				</tr>
+			</thead>
+<!-- 			<tbody>
+				<tr>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>3</td>
+					<td>3</td>
+				</tr>
+			</tbody> -->
+		</table>
+		<div class="all">
+			&nbsp;&nbsp;<input type="checkbox" class="check_all">&nbsp;&nbsp;<span style='color:#0077D2'>全选</span>
+			<a href="javascript:;" class="hebing">合并付款</a></div>
+	<list from='$data' name='$d'>
+		<div class="order">
+			<div class="o_title">
+			&nbsp;&nbsp;<input type="checkbox">&nbsp;&nbsp;<span style='color:#333'>订单编号： </span>
+				<a href="">{$d.order_sn}</a>
+				<span style='color:#333'>
+					下单时间：<?php echo date('Y-m-d H:i',$d['add_time']); ?>
+				</span>&nbsp;&nbsp;
+				<a href="">查看订单详情</a>
+			</div>
+			<div class="o_detail">
+				<ul>
+					<li class="li1">
+						<a href="" style="float:left;"><img src="__ROOT__/{$d.goods_img}"></a>
+						<a href="" class="gname">{$d.goods_name}</a>
+						<span>规格：{$d.goods_attr}</span>
+					</li>
+					<li><span>¥<?php echo number_format($d['goods_price'],2); ?></span></li>
+					<li><span>{$d.goods_number}</span></li>
+					<li><span>¥<?php echo number_format($d['total_price'],2); ?></span></li>
+					<li class="last">
+						<a href="" class="a1">去付款</a>
+						<a href="">取消订单</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</list>
+
+	</div>
+	<!-- 我的预约 -->
+
+</if>
+
+</div>
+<!-- 中间大区结束 -->
+
+
+
+<!-- 底部区块 -->
+<include file='__CONTROLLER_VIEW__/block/bottom.html' />
+<!-- 底部区块结束 -->
+</body>
+</html>

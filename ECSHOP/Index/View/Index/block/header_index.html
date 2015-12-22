@@ -1,0 +1,114 @@
+
+
+<js file='__CONTROLLER_VIEW__/js/header.js'/>
+<!-- 头部灰色区块 -->
+<div class="top_out">
+	<div class="top">
+		<div class="t_right" style="color:#8B8B8B">
+			<if value="isset($_SESSION['username'])" >
+				欢迎您，<a href="{|U:'Member/index'}" style="color:#317DB9;margin-right:8px"><?php echo $_SESSION['username']; ?></a>
+				[<a href="{|U:'Index/out'}" style="color:#317DB9">退出</a>]
+			<else>
+				<a href="{|U:'Index/login'}">[登录]</a>
+				<a href="{|U:'Index/zhuce'}">[注册]</a>
+			</if>
+
+			<span>|</span>
+			<a href="{|U:'Member/order'}">我的订单</a>
+		</div>
+	</div>
+</div>
+<!-- 头部灰色区块结束 -->
+
+<!-- 搜索区块 -->
+<div class="search_out">
+	<div class="logo">
+		<a href="{|U:'index'}"><img src="__CONTROLLER_VIEW__/images/public/logo.png" alt=""></a>
+	</div>
+	<!-- 搜索 -->
+	<div class="search">
+		<div class="ipt">
+			<!-- <form action="{|U:'Index/search'}"> -->
+				<label><input type="text" class="s_txt" name="keyword"></label>
+				<label><input type="submit" class="s_sbt" value="搜索"></label>		
+			<!-- </form> -->
+		</div>
+	</div>
+	<!-- 购物车 -->
+	<div class="shop">
+		<div class="my">
+			<div class="hd_my">
+				<h4>
+				<if value="isset($_SESSION['username'])" >
+					<a href="{|U:'Member/index'}" style="color:#317DB9;margin-right:8px"><?php echo $_SESSION['username']; ?></a>
+				<else>
+					你好，请  <a href="{|U:'Index/login'}">登录</a>  / <a href="{|U:'Index/zhuce'}">注册</a>
+				</if>
+				</h4> 
+				<ul>
+					<li><a href="{|U:'Member/order'}">待付款</a><span></span></li>
+					<li><a href="{|U:'Member/order'}">待评论</a><span></span></li>
+					<li><a href="{|U:'Member/index'}">优惠券</a><span></span></li>
+					<li><a href="{|U:'Member/index'}">站内信</a><span></span></li>
+				</ul>
+			</div>
+			<a href="{|U:'Member/index'}">我的商城</a>
+			<b></b>
+		</div>
+		<div class="gouwu">
+		<if value='!{$hd.session.cart.goods}' >
+			<b class="b_num">0</b>
+		<else>
+			<b class="b_num" style='width:auto;'>{$hd.session.cart.total_num}</b>
+		</if>
+			<a href="{|U:'Index/acount'}" >我的购物车</a>
+			<div class="hd_shop">
+			<if value='!{$hd.session.cart.goods}' >
+				<span class='hd_sp1' style="padding:30px 0;display:block">{$hd.session.cart.goods}你的购物车是空的，赶紧选购吧</span>
+			<else>
+
+				<div class="cart_div">
+					<ul>
+				<list from='$hd.session.cart.goods' name='$c'>
+						<li>
+							<img src="__ROOT__/{$c.goods_thumb}" alt="">
+							<p><a href="{|U:'detail',array('goods_id'=>$c['goods_id'])}">{$c.goods_name}</a></p>
+							<span style='color:#E01D4C;padding:10px 0 0 5px;'>¥ {$c.goods_price} </span> <span style='padding:10px 0 0 5px;'>x {$c.num}</span>
+							<span style='padding:10px 30px 0 5px;float:right'>{$c.attr}</span>
+							<i class="close" onclick='delCart(this,"{$c.cartId}")'>X</i>
+						</li>
+				</list>
+					</ul>
+					<div class="total">
+						<p>共<span style='color:#E01D4C;padding:2px 5px'>{$hd.session.cart.total_num}</span>件商品</p>
+						<p>共计<span class='total_price'>¥ <?php echo number_format($_SESSION['cart']['total'],2); ?></span></p>
+						<a href="{|U:'acount'}" class="a_jiesuan">结算</a>
+					</div>
+				</div>
+			</if>
+			</div>
+
+		</div>
+	</div>
+	<!-- 购物车结束 -->
+</div>
+
+<!-- 搜索区块结束 -->
+
+<!-- 导航条区块 -->
+<div class="nav_out">
+	<div class="nav">
+		<div class="all">
+			<h2>全部商品</h2>
+			<!-- 菜单区块 -->
+		
+		<!-- 菜单区块结束 -->
+		</div>
+		<div class="nav_right">
+			<a href="__ROOT__/index.php" style="background:#BA181F">首页</a>
+			<a href="{|U:'detail',array('goods_id'=>3)}" target="_blank">荣耀6</a>
+		</div>
+	</div>
+</div>
+<!-- 导航条区块结束 -->
+

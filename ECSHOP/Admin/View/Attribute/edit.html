@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性编辑</title>
+	<hdjs />	
+</head>
+<body>
+<div class="wrap">
+	<div class="title-header">编辑属性</div>
+	<form action="" method="post">	
+		<input type="hidden" value="{$data.attr_id}" name="attr_id">
+		<table class="table2 hd-form">
+			<tr>
+				<th class="w100">属性名称</th>
+				<td><input type="text" name="attr_name" value="{$data.attr_name}"></td>
+			</tr>
+			<tr>
+				<th class="w100">属性类型</th>
+				<td>
+					<label><input type="radio" name="attr_type" value="0" <if value="!{$data.attr_type}">checked=''</if> >普通</label>
+					<label><input type="radio" name="attr_type" value="1" <if value="{$data.attr_type}">checked=''</if> >规格</label>
+				</td>
+			</tr>
+			<tr>
+				<th class="w100">录入方式</th>
+				<td>
+					<label><input type="radio" name="attr_input_type" value="0" <if value="{$data.attr_input_type}==0">checked=''</if> >文本</label>
+					<label><input type="radio" name="attr_input_type" value="1" <if value="{$data.attr_input_type}==1">checked=''</if> >下拉列表</label>
+					<label><input type="radio" name="attr_input_type" value="2" <if value="{$data.attr_input_type}==2">checked=''</if> >文本域</label>
+				</td>
+			</tr>
+						<tr>
+				<th class="w100">属性值</th>
+				<td>
+					<textarea name="attr_value" class="w100 h100"<if value="{$data.attr_input_type}!=1">disabled=""</if>>{$data.attr_value}</textarea>
+					<span style='color:#aaa'>一行输入一个值</span>
+				</td>
+			</tr>
+			<tr>
+				<th class="w100">商品类型</th>
+				<td>
+					<select name="cat_id">
+				<list from='$goods_type' name='$gt'>
+					<option value="{$gt.cat_id}" <if value="{$data.cat_id}=={$gt.cat_id}">selected=''</if>>
+						{$gt.cat_name}</option>
+				</list>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<input type="submit" class="hd-success" value="确认">
+	</form>
+	<js file='__CONTROLLER_VIEW__/Js/js.js'/>
+</div>
+</body>
+</html>

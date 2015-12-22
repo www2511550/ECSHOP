@@ -1,0 +1,173 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+	font-family: 微软雅黑;
+}
+
+a{
+	text-decoration: none;
+	color: #333;
+}
+li{
+	list-style:none;
+}
+.position{
+	width: 1200px;
+	height: 19px;
+	line-height: 19px;
+	margin: 10px auto;
+	color: #444;
+	font-size: 12px;
+}
+.position>a{
+	color: #666;
+}
+.position>a:hover{
+	color: #333;
+	text-decoration: underline;
+}
+.position>span{
+	color: #999;
+}
+
+/*分类排序*/
+.pro_cat{
+	width: 1198px;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid #DEDEDE;
+	margin: 0 auto;
+}
+.pro_cat dl dt{
+	float: left;
+	margin-left: 50px;
+	color: #333;
+}
+.pro_cat dl dd{
+	float: left;
+	margin-left: 20px;
+}
+.pro_cat dl dd .dd_a1{
+	color: #E01D20;
+}
+.pro_cat dl dd .dd_a1:hover{
+	color: #E01D20;
+}
+.pro_cat dl dd>a{
+	color: #999;
+}
+.pro_cat dl dd>a:hover{
+	color: #666;
+}
+/*分类排序结束*/
+
+/*产品列表*/
+.list_out{
+	width: 1200px;
+	height: auto;
+	overflow: hidden;
+	margin: 20px auto;
+	position: relative;
+	padding-bottom: 60px;
+}
+.list_out .list{
+	width: 1220px;
+	height: auto;
+	float: left;
+}
+.list_out .list ul li{
+	width: 20%;
+	float: left;
+}
+.list_out .list ul li .list_pro{
+	border: 1px solid #dedede;
+    font-family: "Tahoma",微软雅黑;
+    height: 362px;
+    margin: 0 20px 20px 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+.list_out .list ul li .list_pro>i{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.list_out .list ul li .list_pro .pimg{
+	width: 222px;
+	height: 218px;
+	padding: 12px 0 10px 0;
+}
+.list_out .list ul li .list_pro .pimg>img{
+	width: 222px;
+	height: 218px;
+}
+.list_out .list ul li .list_pro .pname{
+	height: 48px;
+	line-height: 16px;
+	overflow: hidden;
+	padding: 0 20px;
+	float: left;
+	width: 180px;
+}
+.list_out .list ul li .list_pro .pname>a{
+	color: #666;
+}
+.list_out .list ul li .list_pro .pname>a:hover{
+	color: #E01D20;
+	text-decoration: underline;
+}
+.list_out .list ul li .list_pro .pname>a>span{
+	color: #E01D20;
+}
+.list_out .list ul li .list_pro .pprice{
+	line-height: 30px;
+	padding-top: 3px;
+	color: #E01D20;    
+}
+.list_out .list ul li .list_pro .pprice>b{
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+.list_out .list ul li .list_pro .p_btn{
+	width: 224px;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	line-height: 30px;
+	color: #666;
+}
+.list_out .list ul li .list_pro .p_btn>a{
+	display: inline-block;
+	float: left;
+	width: 111px;
+	height: 30px;
+	border-right: 1px solid #DEDEDE;
+	color: #E01D20;
+}
+.list_out .list ul li .list_pro .p_btn>a.current{
+	color: #fff;
+	background: #E01D20;
+}
+/*页码*/
+.list_out .list .page{
+	width: auto;
+	height: 20px;
+	position: absolute;
+	right: 0px;
+	bottom: 15px;
+	color: #666;
+}
+.list_out .list .page>a{
+	padding:2px;
+}
+.list_out .list .page>strong{
+	padding: 2px;
+}
+
+
+
+/*产品列表结束*/

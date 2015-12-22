@@ -1,0 +1,27 @@
+<?php if(!defined("HDPHP_PATH"))exit;C("SHOW_NOTICE",FALSE);?><!-- 底部区块 -->
+<div class="bottom">
+	<ul>
+		<li>
+			<i class='i1'></i>
+			500强企业 品质保证
+		</li>
+		<li>
+			<i class='i2'></i>
+			7天退货 15天换货
+		</li>
+		<li>
+			<i class='i3'></i>
+			100元起免运费
+		</li>
+		<li>
+			<i class='i4'></i>
+			448家维修网点 全国联保
+		</li>
+	</ul>
+	<div class="banquan">
+		<p>Copyright © 2011-2014 华为软件技术有限公司 版权所有 保留一切权利 苏B2-20130048号 | 苏ICP备09062682号-9 </p>
+		<p>网络文化经营许可证苏网文[2012]0401-019号</p>
+	</div>
+</div>
+
+<!-- 底部区块结束 -->

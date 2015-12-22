@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>货品</title>
+	<hdjs />
+    <script type="text/javascript" src="__CONTROLLER_VIEW__/Js/js.js"></script>
+</head>
+<body>
+<div class='menu_list'>
+    <ul>
+        <li>
+            <a href="#">货品管理</a>
+        </li>
+        <li>
+            <a href="{|U:'Goods/index'}">商品列表</a>
+        </li>
+    </ul>
+</div>
+
+<form action="" method="post">
+    <input type="hidden" name="goods_gid" value="{$hd.get.goods_id}">
+    <table class="table2 hd-form">
+    	<thead>
+            <tr>
+            <list from='$attr' name='$a'>
+                 <td>{$a.0.attr_name}</td>
+            </list>
+                <td>货号</td>
+                <td>库存数量</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+        <list from='$product' name='$p'>
+            <tr>
+            <list from="$p['attr_string']" name='$pa'>
+                <td>{$pa}</td>
+            </list>
+                <td>{$p.product_sn}</td>
+                <td>{$p.product_number}</td>
+                <td><a href="{|U:'del',array('product_id'=>$p['product_id'])}" onclick="return confirm('确定删除？')">删除</a></td>
+            </tr>
+        </list>
+        	<tr>
+            <list from='$attr' name='$a'>  
+        		<td>
+                    <select name="attr[{$a.0.id}][]">
+                        <option value="0">**选择属性**</option>
+                    <list from='$a' name='$d' >
+                        <option value="{$d.id}">{$d.attr_value}</option>
+                    </list>
+                    </select>      
+                </td>
+            </list>
+                <td><input type="text" name="product_sn[]" value=""></td>
+                <td><input type="text" name="product_number[]" value=""></td>
+                <td><a href="javascript:;" onclick="addTr(this)">[+]</a></td>
+        	</tr>
+        </tbody>
+    </table>	
+    <input type="submit" class="hd-success" value="确定">
+</form>
+</body>
+</html>

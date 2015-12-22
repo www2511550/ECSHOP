@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>会员中心</title>
+	<link rel="stylesheet" href="__CONTROLLER_VIEW__/css/member.css">
+	<link rel="stylesheet" href="__CONTROLLER_VIEW__/css/header_bottom.css">
+	<hdjs/>
+	<script type="text/javascript" src='__CONTROLLER_VIEW__/js/index.js'></script>
+</head>
+<body>
+<!-- 头部区块 -->
+<include file='__CONTROLLER_VIEW__/block/header.html'/>
+<!-- 头部区块结束 -->
+
+<!-- 路径 -->
+<div class="position">
+	<i>你现在的位置 :</i> <a href="__ROOT__">首页</a><span> > </span>个人中心
+</div>
+<!-- 路径 -->
+<!-- 中间大区 -->
+<div class="main_out">
+	<!-- 左边列表区块 -->
+	<include file='__CONTROLLER_VIEW__/block/left.html'/>
+	<!-- 左边列表区块结束 -->
+
+	<!-- 右边区块结束 -->
+
+	<!-- 我的订单 -->
+	<div class="yuyue">
+		<div class="title"><h3>我的订单</h3></div>
+		<table width="100%">
+			<thead style="background:#D6D6D6;">
+				<tr>
+					<th width="350px">商品及订单号</th>
+					<th width="110px">单价/元</th>
+					<th width="110px">数量</th>
+					<th>实付款/元</th>
+					<th>订单状态及操作</th>
+				</tr>
+			</thead>
+		</table>
+		<div class="all">
+			&nbsp;&nbsp;<input type="checkbox" class="check_all">&nbsp;&nbsp;<span style='color:#0077D2'>全选</span>
+			<a href="javascript:;" class="hebing">合并付款</a></div>
+
+	<list from='$data' name='$d'>
+		<div class="order">
+			<div class="o_title">
+			&nbsp;&nbsp;<input type="checkbox">&nbsp;&nbsp;<span style='color:#333'>订单编号： </span>
+				<a href="javacript:;">{$d.order_sn}</a>
+				<span style='color:#333'>
+					下单时间：<?php echo date('Y-m-d H:i',$d['add_time']); ?>
+				</span>&nbsp;&nbsp;
+				<a href="javascript:;">查看订单详情</a>
+			</div>
+			<div class="o_detail">
+				<ul>
+					<li class="li1">
+						<a href="{|U:'Index/detail',array('goods_id'=>$d['goods_gid'])}" style="float:left;" target="_blank"><img src="__ROOT__/{$d.goods_img}"></a>
+						<a href="{|U:'Index/detail',array('goods_id'=>$d['goods_gid'])}" class="gname"  target="_blank">{$d.goods_name}</a>
+						<span>规格：{$d.goods_attr}</span>
+					</li>
+					<li><span>¥<?php echo number_format($d['goods_price'],2); ?></span></li>
+					<li><span>{$d.goods_number}</span></li>
+					<li><span>¥<?php echo number_format($d['total_price'],2); ?></span></li>
+				<if value="{$d.order_goods_status}==0">
+					<li class="last">
+						<a href="{|U:'Order/oneOrder',array('id'=>$d['order_goods_id'])}" class="a1">去付款</a>
+						<a href="javascript:;" class="cancel_order" onclick="cancelOrder({$d.order_goods_id})">取消订单</a>
+					</li>
+				</if>
+				<if value="{$d.order_goods_status}==1">
+					<li><span style='color:#0077d2;'>已付款</span></li>
+				</if>
+				<if value="{$d.order_goods_status}==2">
+					<li><span>已取消</span></li>
+				</if>
+					
+				</ul>
+			</div>
+		</div>
+
+	</list>
+
+	</div>
+	<!-- 我的预约 -->
+
+</div>
+<!-- 中间大区结束 -->
+
+
+<!-- 底部区块 -->
+<include file='__CONTROLLER_VIEW__/block/bottom.html' />
+<!-- 底部区块结束 -->
+</body>
+</html>

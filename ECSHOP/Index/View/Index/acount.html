@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<link rel="stylesheet" href="__CONTROLLER_VIEW__/css/acount.css">
+	<link rel="stylesheet" href="__CONTROLLER_VIEW__/css/header_bottom.css">
+	<hdjs/>
+	<script type="text/javascript" src="__CONTROLLER_VIEW__/js/jquery172.js"></script>
+	<script type="text/javascript" src='__CONTROLLER_VIEW__/js/acount.js'></script>
+</head>
+<body>
+<!-- 头部灰色区块 -->
+<div class="top_out">
+	<div class="top">
+		<div class="t_right">
+			<if value="isset($_SESSION['username'])" >
+				欢迎您，<a href="{|U:'Member/index'}" style="color:#317DB9;margin-right:8px"><?php echo $_SESSION['username']; ?></a>
+				[<a href="{|U:'Index/out'}" style="color:#317DB9">退出</a>]
+			<else>
+				<a href="{|U:'Index/login'}">[登录]</a>
+				<a href="{|U:'Index/zhuce'}">[注册]</a>
+			</if>
+
+			<span>|</span>
+			<a href="{|U:'Member/order'}">我的订单</a>
+		</div>
+	</div>
+</div>
+<!-- 头部灰色区块结束 -->
+<!-- 流程图区块 -->
+<div class="search_out">
+	<div class="logo">
+		<a href="__ROOT__"><img src="__CONTROLLER_VIEW__/images/public/logo.png" alt=""></a>
+	</div>
+	<div class="liucheng">
+		<div class="lc1"></div>
+		<div class="lc2"></div>
+		<div class="lc3"></div>
+	</div>
+</div>
+<!-- 流程图区块 -->
+<if value='{$hd.session.cart.goods}' >
+<!-- 购物车中的商品 -->
+<div class="goods">
+	<table>
+	<!-- 标题 -->
+		<tr class="tr_title">
+			<th class="g_check"><input type="checkbox"  class="select_all" checked="checked"></th>
+			<th class="g_pro">商品</th>
+			<th class="g_price">单价（元）</th>
+			<th class="g_num">数量</th>
+			<th class="g_total">小计（元）</th>
+			<th class="g_operate">操作</th>
+		</tr>
+	<!-- 标题结束 -->
+	<list from='$hd.session.cart.goods' name='$c'>
+		<tr class="select">
+			<td class="g_check">
+				<input type="checkbox" class="one_check" checked="checked" cartId='{$c.cartId}' onclick="checkOne(this)">
+			</td>
+			<td class="g_pro td2">
+			 	<img src="__ROOT__/{$c.goods_thumb}" alt="">
+			 	<p><a href="{|U:'detail',array('goods_id'=>$c['goods_id'])}" target="_blank">{$c.goods_name}</a></p>
+			 	<p>规格： {$c.attr}</p>
+			</td>
+			<td class="g_price bd">¥<span class='one_price'>{$c.goods_price}</span></td>
+			<td class="g_num bd">
+				<div class="inc">
+					<a href="javascript:;" class="a_inc" onclick="changeNum(this)" tp="1">-</a>
+					<input type="text" class="num num_ipt" value="{$c.num}" name="num" onkeyup="changeNum(this)"  onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" cartId='{$c.cartId}' proNum='{$c.product_number}'>
+					<a href="javascript:;" class="a_cre" onclick="changeNum(this)" tp="2">+</a>
+				</div>
+			</td>
+			<td class="g_total bd" style="background:#FDFDFD">
+				<b>¥</b><span style='font-weight:600;'><?php echo number_format($c['total_price'],2); ?></span> 
+			</td>
+			<td class="g_operate td_close"><a href="javascript:;" onclick='delCart(this,"{$c.cartId}")'></a></td>
+		</tr>
+	</list>
+
+	</table>
+</div>
+<!-- 购物车中的商品结束 -->
+<div class="h_20"></div>
+<!-- 商品结算 -->
+<div class="jiesuan">
+	<div class="total_control">
+		<input type="checkbox" class="select_all" checked="checked">
+		<label for="">全选</label>
+		<a href="javascript:;" onclick="delCheck()">删除选中商品</a>
+	</div>
+	<div class="total_price">
+		<p>总计金额：	<i>¥</i><span class='total_money'><?php echo number_format($_SESSION['cart']['total'],2); ?></span></p>
+		<p>共节省：	<i>¥</i><span>0.00</span></p>
+		<p class="p_p3">总计金额：	<b>¥</b><span class='total_money'><?php echo number_format($_SESSION['cart']['total'],2); ?></span></p>
+	</div>
+</div>
+<div class="h_25"></div>
+<div class="two_input">
+	<a href="javascript:;" class="ipt_suan" onclick="test()">去结算</a>
+	<a href="__ROOT__" class="ipt_buy">继续购物</a>
+</div>
+<!-- 商品结算结束 -->
+<else>
+<!-- 大笑脸 -->
+<div class="goods">
+	<table>
+	<!-- 标题 -->
+		<tr class="tr_title">
+			<th class="g_check"><input type="checkbox"></th>
+			<th class="g_pro">商品</th>
+			<th class="g_price">单价（元）</th>
+			<th class="g_num">数量</td>
+			<th class="g_total">小计（元）</th>
+			<th class="g_operate">操作</th>
+		</tr>
+	</table>
+</div>
+<div class="sweet">
+	<h4>亲，您购物车里还没有物品哦，快去逛逛吧！ </h4>
+</div>
+<!-- 大笑脸结束 -->
+</if>
+<!-- 底部区块 -->
+<include file='__CONTROLLER_VIEW__/block/bottom.html' />
+<!-- 底部区块结束 -->
+
+</body>
+</html>

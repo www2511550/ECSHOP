@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列表页</title>
+	<link rel="stylesheet" href="__CONTROLLER_VIEW__/css/lists.css">
+	<link rel="stylesheet" href="__CONTROLLER_VIEW__/css/header_bottom.css">
+	<script type="text/javascript" src="__CONTROLLER_VIEW__/js/jquery172.js"></script>
+	<script type="text/javascript" src='__CONTROLLER_VIEW__/js/list.js'></script>
+	<script type="text/javascript" src='__CONTROLLER_VIEW__/js/index.js'></script>
+</head>
+<body>
+<!-- 头部区块	 -->
+<include file='__CONTROLLER_VIEW__/block/header.html'/>
+<!-- 头部区块结束 -->
+
+<!-- 路径 -->
+<div class="position">
+	<a href="__ROOT__">首页</a><span> > </span>{$cate.cat_name}
+</div>
+<!-- 路径 -->
+<!-- 分类排序 -->
+<list from='$attr' name='$a' >
+<div class="pro_cat" <if value="$hd['list']['a']['index']!=1">style="border-top: none;"</if>  >
+	<dl>
+		<dt>{$a.attr_name} :</dt>
+		<dd>{|getAttrLink:$hd['list']['a']['index'],0,'全部'}</dd>
+	<list from='$a._value' name='$a2'>
+		<dd>{|getAttrLink:$hd['list']['a']['index'],$a2['id'],$a2['attr_value']}</dd>
+	</list>
+	</dl>
+</div>
+</list>
+<div class="pro_cat" style="border-top: none;">
+	<dl>
+		<dt>排序 :</dt>
+		<dd>
+			<a href="{|U:'lists',array('cid'=>Q('cid'),'order'=>'0')}" <if value="!Q('order')"> class="dd_a1" </if> >默认</a>
+		</dd>
+		<dd>
+			<a href="{|U:'lists',array('cid'=>Q('cid'),'order'=>'1')}" <if value="Q('order')==1"> class="dd_a1" </if>>价格</a>
+		</dd>
+		<dd>
+			<a href="{|U:'lists',array('cid'=>Q('cid'),'order'=>'2')}" <if value="Q('order')==2"> class="dd_a1" </if>>上架时间</a>
+		</dd>
+	</dl>
+</div>
+
+<!-- 分类排序结束 -->
+
+<!-- 产品列表 -->
+<div class="list_out">
+	<div class="list">
+		<ul>
+		<list from='$data' name='$d'>
+			<li>
+				<div class="list_pro">
+				<if value="{$d.is_hot}">
+					<i><img src="__CONTROLLER_VIEW__/images/is_hot.png" alt=""></i>
+				</if>
+				<if value="{$d.is_new}">
+					<i><img src="__CONTROLLER_VIEW__/images/is_new.png" alt=""></i>
+				</if>
+				<if value="{$d.is_best}">
+					<i><img src="__CONTROLLER_VIEW__/images/is_best.png" alt=""></i>
+				</if>
+					<p class="pimg"><a href="{|U:'detail',array('goods_id'=>$d['goods_id'])}"><img src="__ROOT__/{$d.goods_thumb}" alt=""></a></p>
+					<p class="pname"><a href="{|U:'detail',array('goods_id'=>$d['goods_id'])}">{$d.goods_name}</a></p>
+					<p class="pprice"><b>¥{$d.goods_price}</b></p>
+					<div class="p_btn">
+						<a href="">加入购物车</a><span>{$d.goods_click}</span>评价
+					</div>
+				</div>
+			</li>
+		</list>
+
+		</ul>
+		<!-- 页码 -->
+		<div class="page">
+			{$page}
+		</div>
+	</div>
+
+</div>
+<!-- 产品列表结束 -->
+
+<!-- 底部区块 -->
+<include file='__CONTROLLER_VIEW__/block/bottom.html'/>
+
+<!-- 底部区块结束 -->
+
+
+</body>
+</html>

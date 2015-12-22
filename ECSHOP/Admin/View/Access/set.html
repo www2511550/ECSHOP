@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>权限设置</title>
+	<hdjs/>
+</head>
+<body>
+<div class="wrap">
+	<div class="title-header">权限设置</div>
+<form method="post">
+	<input type="hidden" name='rid' value="{$_SESSION['rid']}">
+	<table class="table2 hd-form">
+	<list from='$node' name='$n'>
+		<tr>
+			<td><input type="checkbox" name='access[]' value="{$n.nid}" <if value="{$n.rid}==$rid">checked=''</if>
+			> {$n.title}</td>
+		</tr>
+		<list from='$n._data' name='$nd'>
+		<tr>
+			<td><input type="checkbox" name='access[]' value="{$nd.nid}" <if value="{$nd.rid}==$rid">checked=''</if>
+			> {$nd.title}</td>
+		</tr>
+		<tr>
+			<td>
+				<ul  style="margin-left:15px;">
+				<list from='$nd._data' name='$nd2'>
+					<li style="margin-right:10px;float:left">
+						<input type="checkbox" name='access[]' value="{$nd2.nid}" <if value="{$nd2.rid}==$rid">checked=''</if> 
+						> {$nd2.title}
+					</li>
+				</list>
+				</ul>
+			</td>
+		</tr>
+		</list>
+	</list>
+		<tr>
+			<td><input type="submit" value="确认" class="hd-success"></td>
+		</tr>
+	</table>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,1002 @@
+@charset "utf-8";
+/*
+ * Copyright 2005-2013 finalist.cn. All rights reserved.
+ * Support: http://www.finalist.cn
+ * License: http://www.finalist.cn/license
+ * 
+ * Style - Order
+ * Version: 3.0
+ */
+
+/* ---------- OrderInfo ---------- */
+/*头部灰色区块*/
+.top_out{
+	height: 30px;
+	width: 100%;
+	border-bottom: 1px solid #EDEDED;
+	background: #FAFAFA;
+}
+.top_out .top{
+	width: 1000px;
+	height: 16px;
+	margin: 0 auto;
+	padding: 7px 0;
+}
+.top_out .top .t_right{
+	float: right;
+}
+.top_out .top .t_right>span{
+	padding: 0 10px;
+	color: #c8c8c8;
+}
+/*头部灰色区块结束*/
+
+/*流程图区块*/
+.search_out{
+	width: 1000px;
+	height: 106px;
+	margin: 0 auto;
+}
+.search_out .logo{
+	width: 345px;
+	padding-top: 36px;
+	float: left;
+}
+.search_out .liucheng{
+	width: 570px;
+	height: 34px;
+	padding-top: 36px;
+	overflow: hidden;
+	float: right;
+}
+.search_out .liucheng>div{
+	width: 570px;
+	height: 34px;
+	float: left;
+}
+.search_out .liucheng .lc1{
+	background: url(../images/car/car.png) 0 0 no-repeat;
+}
+.search_out .liucheng .lc2{
+	background: url(../images/car/car.png) 0 -45px no-repeat;
+}
+.search_out .liucheng .lc3{
+	background: url(../images/car/car.png) 0 -88px no-repeat;
+}
+/*流程图区块结束*/
+
+
+div.orderInfo .receiver {
+	margin: 10px 0 10px 0;
+	border: solid 1px #DEDEDE;
+	border-top-color:#DEDEDE;
+}
+div.orderInfo .receiver .title {
+	line-height: 36px;
+	padding-left: 11px;
+	font-size: 14px;
+	font-weight: bold;
+	background:#fcf7fe;
+	color:#333;font-family:"Tahoma",​微软雅黑;
+}
+div.orderInfo .receiver ul {
+	max-height: 230px;overflow:hidden;
+	_zoom: 1;
+}
+div.orderInfo .receiver li {
+	width: 208px;
+	height: 90px;
+	_display: inline;
+	float: left;
+	padding: 4px 8px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	overflow: hidden;
+	cursor: pointer;
+	border: solid 1px #e4e4e4;
+	margin:10px
+}
+div.orderInfo .receiver li:hover {
+	border: solid 1px #CD86E2;
+	background-color: #FCF7FE;
+}
+div.orderInfo .receiver li.selected {
+	border: solid 1px #cd86e2;
+	background:#FCF7FE  url(../images/order.gif) right bottom no-repeat;
+}
+div.orderInfo .receiver li.selected:hover {
+	border: solid 1px #cd86e2;
+}
+div.orderInfo .receiver li.seleted_none {
+	background:none;
+	border-color:#dddddd
+}
+div.orderInfo .receiver li span {
+	line-height: 20px;
+	display: block;
+}
+div.orderInfo .receiver li strong {
+	color: #333333;
+	font-size: 14px;
+	font-weight: normal;
+}
+div.orderInfo .newReceiver {
+	position: relative;
+	z-index: 100;
+	-webkit-box-shadow: 0px 0px 8px #e8e8e8;
+	-moz-box-shadow: 0px 0px 8px #e8e8e8;
+	box-shadow: 0px 0px 8px #e8e8e8;
+	border: solid 1px #dddddd;
+	background-color: #ffffff;
+}
+div.orderInfo .newReceiver th {
+	font-weight: normal;
+	text-align: right;
+	background-color: #ffffff;
+}
+div.orderInfo table {
+	width: 100%;
+	margin-bottom: 10px;
+	border: solid 1px #e6e4e3;
+}
+div.orderInfo th {
+	color: #333;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 36px;
+	padding-left: 6px;
+	text-align: left;
+	background-color: #fafafa;
+	border-top:1px solid #8D50B4;
+	text-align:center;font-family:"微软雅黑"
+}
+div.orderInfo table.newReceiver th{border-top:0 none}
+div.orderInfo .product th {
+	border-bottom:1px solid #DEDEDE;
+}
+div.orderInfo .border_btnone th{border-bottom:0 none;text-align:left}
+div.orderInfo .border_tpnone th{border-top:0 none;text-align:center}
+div.orderInfo td {
+	line-height: 30px;
+	padding: 6px;
+}
+div.orderInfo .select {
+	margin-bottom: 8px;
+}
+div.orderInfo .select dt {
+	line-height: 36px;
+	padding-left: 6px;
+	font-size: 14px;
+	font-weight: bold;
+	border-top: solid 1px #DEDEDE;
+	background: none repeat scroll 0 0 #FCF7FE;
+	color: #333;font-family:"微软雅黑";
+}
+div.orderInfo .select dd {
+	padding: 4px;
+	margin-bottom: 2px;
+	border-top: solid 1px #fff;
+	border-right: solid 1px #ffffff;
+	border-bottom: solid 1px #f2f2f2;
+	border-left: solid 1px #ffffff;
+}
+div.orderInfo .p_select dd:nth-of-type(2) {
+border-bottom:1px solid #fff
+}
+div.orderInfo .select dd:nth-of-type(3) {
+border-bottom:1px solid #fff
+}
+div.orderInfo .p_select {
+	border:1px solid #dddddd;
+	border-top-color:#DEDEDE;
+}
+div.orderInfo .select dd label {
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	padding: 8px;
+	cursor: pointer;
+	border: solid 3px #ffffff;
+}
+div.orderInfo .select dd:hover {
+	padding: 0px;
+	border: solid 5px #f3f3f3;
+}
+div.orderInfo .select dd:hover label {
+	border: solid 3px #dddddd;
+}
+div.orderInfo .select dd.selected {
+	padding: 0px;
+	border: solid 5px #fff0db;
+}
+div.orderInfo .select dd.selected label {
+	border: solid 3px #ffcd88;
+}
+
+div.orderInfo .select dd input {
+	width: 15px;
+	height: 15px;
+	float: left;
+	margin-right: 6px;
+	margin-top: 9px;
+}
+div.orderInfo .select dd span {
+	display: block;
+	float: left;
+	margin-right: 10px;
+	color: #888888;
+}
+div.orderInfo .select dd em {
+	width: 30px;
+	height: 30px;
+	display: block;
+	float: left;
+	border: solid 1px #e5e5e5;
+}
+div.orderInfo .select dd strong {
+	width: 100px;
+	height: 30px;
+	display: block;
+	float: left;
+	padding: 0px 8px;
+	font-weight: normal;
+	overflow: hidden;
+	border: solid 1px #e5e5e5;
+	background-color: #f8f8f8;
+}
+div.orderInfo .product td {
+	padding: 6px;
+	border: solid 1px #f1f1f1;
+}
+div.orderInfo .product img {
+	width: 60px;
+	height: 60px;
+}
+div.orderInfo .memo {
+	height: 24px;
+	margin-bottom: 10px;
+}
+div.orderInfo .memo dt {
+	line-height: 24px;
+	float: left;
+	margin-right: 10px;
+	color: #999999;
+}
+div.orderInfo .memo dd {
+	float: left;
+}
+div.orderInfo .memo input {
+	width: 174px;
+	height: 18px;
+	line-height: 18px;
+	padding: 2px;
+	border: 1px solid #cccccc;
+}
+div.orderInfo .coupon {
+	height: 24px;
+	margin-bottom: 10px;
+}
+div.orderInfo .coupon dt {
+	line-height: 24px;
+	float: left;
+	margin-right: 10px;
+	color: #999999;
+}
+div.orderInfo .coupon dd {
+	width: 180px;
+	height: 20px;
+	line-height: 20px;
+	float: left;
+	position: relative;
+	padding: 2px 0px;
+	margin-bottom: 10px;
+	background: url(../images/order.gif) 0px -30px no-repeat;
+}
+div.orderInfo .coupon span {
+	width: 122px;
+	height: 20px;
+	line-height: 20px;
+	padding: 0px 4px;
+	display: none;
+	position: absolute;
+	color: #ff6600;
+	overflow: hidden;
+}
+div.orderInfo .coupon input {
+	width: 122px;
+	height: 20px;
+	line-height: 20px;
+	padding: 0px 4px;
+	margin: 0px;
+	position: absolute;
+	color: #888888;
+	outline: none;
+	border: none;
+	background: none;
+}
+div.orderInfo .coupon button {
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	float: right;
+	margin: 0px;
+	font-size: 12px;
+	position: relative;
+	color: #ffffff;
+	cursor: pointer;
+	outline: none;
+ blr: expression(this.hideFocus = true);
+	border: none;
+	background: none;
+}
+div.orderInfo .statistic {
+	line-height: 26px;
+	margin-bottom: 10px;
+	text-align: right;
+}
+div.orderInfo .statistic .red_font{color:#999999;font-family:"微软雅黑"}
+div.orderInfo .statistic span {
+	margin-left: 10px;
+}
+div.orderInfo .statistic em {
+	color: #ff6600;
+	font-style: normal;
+}
+div.orderInfo .statistic strong {
+	color: #ef0101;
+	font-size: 14px;
+}
+div.orderInfo .bottom {
+	height:45px;
+	line-height: 45px;
+	margin-bottom: 10px;
+	text-align: right;
+	overflow: hidden;
+}
+div.orderInfo .bottom .back {
+	margin-right: 10px;
+	font-family: "Microsoft YaHei";
+	padding:8px 18px;
+	background:#f0efef;
+	border:1px solid #c8c8c8;
+	margin-right:800px;-webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px;border-radius:4px
+}
+div.orderInfo .bottom .submit {
+	padding: 8px 18px;
+	color: #ffffff;
+	font-family: "Microsoft YaHei";
+	background-color: #ef3037;-webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px;border-radius:4px
+}
+div.orderInfo .bottom .submit:hover {
+	cursor:wait
+	background-color: #f7383f;
+}
+
+a.wait {
+	cursor:wait
+	
+}
+/* ---------- OrderPayment ---------- */
+
+div.orderPayment .dialog {
+	width: 300px;
+	height: 200px;
+	line-height: 24px;
+	padding: 10px 60px;
+	margin-left: -216px;
+	display: none;
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	z-index: 100;
+	color: #888888;
+	border: solid 6px #ededed;
+	background-color: #ffffff;
+}
+div.orderPayment .dialog dt {
+	line-height: 60px;
+	color: #000000;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	text-align: center;
+}
+div.orderPayment .dialog div {
+	height: 34px;
+	padding: 10px 0px;
+}
+div.orderPayment .dialog div a {
+	height: 34px;
+	line-height: 34px;
+	display: inline-block;
+ *zoom: 1;
+ *display: inline;
+	float: left;
+	padding: 0px 14px;
+	margin-right: 30px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	text-align: center;
+	outline: none;
+ blr: expression(this.hideFocus = true);
+	background: url(../images/order.gif) -10px -60px no-repeat;
+}
+div.orderPayment .dialog div a:hover {
+	color: #ffead0;
+}
+div.orderPayment .result {
+	padding: 20px;
+	margin-bottom: 10px;
+	border: 1px solid #e4bef7;
+	background-color: #fcf7fe;
+	margin-top:10px
+}
+div.orderPayment .result .title {
+	height: 50px;
+	line-height: 50px;
+	color: #8d50b4;
+	font-size: 24px;
+	font-family: "Microsoft YaHei";
+	text-align: center;
+}
+div.orderPayment .result table {
+	width: 100%;
+	line-height: 36px;
+	margin-bottom: 10px;
+}
+div.orderPayment .result th {
+	text-align: left;
+}
+div.orderPayment .result td {
+	padding: 0px 8px;
+	border: 1px solid #eeeeee;
+	background-color: #ffffff;
+}
+div.orderPayment .result strong {
+	color: #f11200;
+	font-weight: bold;
+}
+div.orderPayment .result .paymentPlugin td {
+	padding: 4px;
+	border: none;
+	background:#fcf7fe
+}
+div.orderPayment .result .paymentPlugin input {
+	width: 15px;
+	height: 15px;
+	float: left;
+	margin-top: 9px;
+	margin-right: 6px;
+}
+div.orderPayment .result .paymentPlugin em {
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	float: left;
+	padding: 2px 8px;
+	color: #888888;
+	font-style: normal;
+	font-weight: normal;
+	overflow: hidden;
+	cursor: pointer;
+	border: solid 1px #dddddd;
+	background-color: #ffffff;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+div.orderPayment .result .paymentPlugin em:hover {
+	border: solid 1px #ffaa33;
+}
+div.orderPayment .result .paymentButton {
+	width: 150px;
+	height: 37px;
+	line-height: 37px;
+	display: inline-block;
+ *zoom: 1;
+ *display: inline;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	text-align: center;
+	cursor: pointer;
+	overflow: visible;
+	outline: none;
+ blr: expression(this.hideFocus = true);
+	border: none;
+	background: url(../images/order.gif) 0px -60px no-repeat;
+}
+div.orderPayment .result .paymentButton:hover {
+	color: #ffead0;
+}
+div.orderInfo .step {
+	height: 25px;
+	margin-bottom: 15px;
+}
+div.orderInfo .step ul {
+	float: right;
+}
+/***************1是红色的***************/
+div.orderInfo .step li.a-2 {
+	background-position: -160px 0px;
+}
+div.orderInfo .step li.a-3 {
+	background-position: -320px 0px;
+}
+/**************2是红色的*******/
+div.orderInfo .step li.b-1 {
+	background-position: 0px -49px;
+	color:#e62979
+}
+div.orderInfo .step li.b-2 {
+	background-position: -160px -49px;
+	color:#e62979
+}
+div.orderInfo .step li.b-3 {
+	background-position: -320px 0px;
+}
+/*****************3是红色的****************/
+div.orderInfo .step li.c-1 {
+	background-position: 0px -98px;
+	color:#e62979
+}
+div.orderInfo .step li.c-2 {
+	background-position: -160px -98px;
+	color:#e62979
+}
+div.orderInfo .step li.c-3 {
+	background-position: -320px -98px;
+	color:#e62979
+}
+div.orderInfo .step li {
+	width: 160px;
+	height: 24px;
+	line-height: 24px;
+	float: left;
+	_position: relative;
+	font-family: "Microsoft YaHei";
+	text-align: center;
+	background: url(../images/cart/steps-bg-1.png) 0px 0px no-repeat;
+	padding-top:24px
+}
+div.orderInfo .step .current {
+	color: #e62979;
+}
+div.orderInfo .write h2 {
+	line-height:40px;
+	color:#4f1268;
+	font-size:16px;
+	font-family:"微软雅黑"
+}
+div.orderInfo .write_success h2 {
+	line-height:40px;
+	color:#646464;
+	font-size:16px;
+	font-family:"微软雅黑"
+}
+div.orderInfo .write_success h2 span{
+	
+	color:#646464;
+	font-size:14px;
+	font-family:"微软雅黑"
+}
+
+div.orderInfo .receiver p {
+	margin:10px
+}
+div.orderInfo .redfont {
+	color:#e73736;
+	font-weight:600
+}
+/************完成订单************/
+div.orderPayment .step {
+	height: 25px;
+	margin-bottom: 15px;
+}
+div.orderPayment .step ul {
+	float: right;
+}
+/***************1是红色的***************/
+div.orderPayment .step li.a-2 {
+	background-position: -160px 0px;
+}
+div.orderPayment .step li.a-3 {
+	background-position: -320px 0px;
+}
+/**************2是红色的*******/
+div.orderPayment .step li.b-1 {
+	background-position: 0px -49px;
+	color:#e62979
+}
+div.orderPayment .step li.b-2 {
+	background-position: -160px -49px;
+	color:#e62979
+}
+div.orderPayment .step li.b-3 {
+	background-position: -320px 0px;
+}
+/*****************3是红色的****************/
+div.orderPayment .step li.c-1 {
+	background-position: 0px -98px;
+	color:#e62979
+}
+div.orderPayment .step li.c-2 {
+	background-position: -160px -98px;
+	color:#e62979
+}
+div.orderPayment .step li.c-3 {
+	background-position: -320px -98px;
+	color:#e62979
+}
+div.orderPayment .step li {
+	width: 160px;
+	height: 24px;
+	line-height: 24px;
+	float: left;
+	_position: relative;
+	font-family: "Microsoft YaHei";
+	text-align: center;
+	background: url(../images/steps-bg-1.png) 0px 0px no-repeat;
+	padding-top:24px
+}
+div.orderPayment .step .current {
+	color: #e62979;
+}
+div.orderPayment .write h2 {
+	line-height:40px;
+	color:#4f1268;
+	font-size:16px;
+	font-family:"微软雅黑"
+}
+
+
+
+
+
+/********立即充值*********************/
+/**************2是红色的*******/
+div.orderInfo .iphonestep li.b-1 {
+	background-position: 0px -147px;
+	color:#e62979
+}
+div.orderInfo .iphonestep li.b-2 {
+	background-position: -160px -147px;
+	color:#e62979
+}
+div.orderInfo .iphonestep li.b-3 {
+	background-position: -320px -147px;
+}
+div.orderInfo .iphonestep li.b-4 {
+	background-position: -489px -147px;
+}
+
+div.orderInfo .iphonestep li {
+	width: 160px;
+	height: 24px;
+	line-height: 24px;
+	float: left;
+	_position: relative;
+	font-family: "Microsoft YaHei";
+	text-align: center;
+	background: url(../images/iphonesteps-bg-1.png) 0px 0px no-repeat;
+	padding-top:24px
+}
+div.orderInfo .iphonestep .current {
+	color: #e62979;
+}
+
+/************完成订单************/
+div.orderInfo .iphonestep {
+	height: 25px;
+	margin-bottom: 15px;
+}
+div.orderInfo .iphonestep ul {
+	float: right;
+}
+
+
+
+/****************充值第三步*************/
+div.orderPayment .result-border{border-top:2px solid #952eb3;margin-bottom:0}
+div.orderPayment .result .order_success{background: url(../images/order_success.png) no-repeat center left;height:22px;padding-left:25px;line-height:22px}
+div.orderPayment .result .order_success span{color:#952eb3;font-size:14px;font-family:"微软雅黑";line-height:22px}
+div.orderPayment .result .order_success i{color:#ed1c24;font-style:normal}
+div.orderPayment .result .order_successgray{color:#9b999b;padding-left:25px;margin-top:15px}
+div.orderPayment .result .order_successgray i{color:#ff8000;font-style:normal;}
+div.orderPayment .write_success h2 {
+	line-height:40px;
+	color:#646464;
+	font-size:16px;
+	font-family:"微软雅黑";
+	
+}
+div.orderPayment .write_success h2 span{font-size:14px;
+	font-family:"微软雅黑";}
+	
+	
+/*************3个都是红色***************/	
+div.orderPayment .successstep li.b-1 {
+	background-position: 0px -195px;
+	color:#e62979
+}
+div.orderPayment .successstep li.b-2 {
+	background-position:  -160px -195px;
+	color:#e62979
+}
+div.orderPayment .successstep li.b-3 {
+	background-position: -320px -195px;
+	color:#e62979
+}
+div.orderPayment .successstep li.b-4 {
+	background-position: -485px -195px;
+	color:#e62979
+}
+
+	
+	/*****************4个都是红色的****************/
+div.orderPayment .successstep li.c-1 {
+	background-position: 0px -243px;
+	color:#e62979
+}
+div.orderPayment .successstep li.c-2 {
+	background-position:  -160px -243px;
+	color:#e62979
+}
+div.orderPayment .successstep li.c-3 {
+	background-position: -320px -243px;
+	color:#e62979
+}
+div.orderPayment .successstep li.c-4 {
+	background-position: -486px -243px;
+	color:#e62979
+}
+
+
+
+
+
+
+div.orderPayment .successstep li {
+	width: 160px;
+	height: 24px;
+	line-height: 24px;
+	float: left;
+	_position: relative;
+	font-family: "Microsoft YaHei";
+	text-align: center;
+	background: url(../images/iphonesteps-bg-1.png) 0px 0px no-repeat;
+	padding-top:24px
+}
+div.orderPayment .successstep .current {
+	color: #e62979;
+}
+
+/************完成订单************/
+div.orderPayment .successstep {
+	height: 25px;
+	margin-bottom: 15px;
+}
+div.orderPayment .successstep ul {
+	float: right;
+}
+/***************充值卡充值1是红色时*****/
+
+div.orderInfo .iphonestep li.d-1 {
+	background-position: 0px -293px;
+	color:#e62979
+}
+div.orderInfo .iphonestep li.d-2 {
+	background-position: -160px -293px;
+	margin-right:5px;
+}
+/***********2是红色时*********/
+div.orderInfo .iphonestep li.e-1 {
+	background-position: 0px -341px;
+	color:#e62979
+}
+div.orderInfo .iphonestep li.e-2 {
+	background-position: -160px -341px;
+	margin-right:5px;color:#e62979
+}
+input.achieve {
+	height: 28px;
+ *line-height: 22px;
+	display: inline-block;
+ *zoom: 1;
+ *display: inline;
+	padding: 0px 8px;
+	margin-right: 6px;
+	color: #666666;
+	vertical-align: middle;
+ *overflow: visible;
+	cursor: pointer;
+	text-shadow: 1px 1px #ffffff;
+	-webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	outline: none;
+ blr: expression(this.hideFocus = true);
+	border: 1px solid #b7c8d9;
+	background: url(../images/common.gif) 0px -30px repeat-x;
+}
+input.verification-code {
+	width: 120px;
+	height: 18px;
+	line-height: 18px;
+	padding: 4px;
+	color: #666666;
+	-webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	-moz-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid;
+	border-color: #999999 #e1e1e1 #e1e1e1 #999999;
+	background: url(../images/common.gif) 0px 0px no-repeat;
+}
+div.orderInfo td span.fieldSet select {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #CCCCCC #E1E1E1 #E1E1E1 #CCCCCC;
+    border-image: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.125) inset;
+    color: #666666;
+    float: left;
+    height: 31px;
+    line-height: 31px;
+    padding: 3px 0 3px 4px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+
+/*发票信息样式-zm*/
+.step-action {
+padding-left: 10px;
+color: #005ea7;
+font-size: 12px;
+font-weight: 400;
+}
+#part-invoice .item {
+height: 28px;
+margin-bottom: 5px;
+overflow: hidden;
+zoom: 1;
+line-height: 28px;
+}
+div.orderInfo .snc_select dd.noselect {
+padding: 4px;
+margin-bottom: 2px;
+border-top: solid 1px #fff;
+border-right: solid 1px #ffffff;
+border-bottom: solid 1px #f2f2f2;
+border-left: solid 1px #ffffff;
+}
+div.orderInfo .snc_select dd.noselect:hover {
+	padding:0px;
+	height:auto;
+}
+
+div.orderInfo .snc_select dd.noselect {
+padding: 4px;
+margin-bottom: 2px;
+border-top: solid 1px #fff;
+border-right: solid 1px #ffffff;
+border-bottom: solid 1px #f2f2f2;
+border-left: solid 1px #ffffff;
+}
+div.orderInfo .snc_select dd.noselect span {
+display:inline;
+float:none;
+margin-right:0px;
+color: #888888;
+}
+div.orderInfo .snc_select dd.noselect label {
+border:none;
+display:inline;
+}
+div.orderInfo .snc_select dd.noselect input {
+width: 15px;
+height: 15px;
+float: left;
+margin-right:0px;
+margin-top:8px;
+*margin-top:0px;
+margin-left:8px;
+}
+.itemReceipt{ margin:2px 0;}
+.itemReceipt.on{background:#FCF7FE;}
+.itemReceipt:hover{ background:#FCF7FE;}
+
+.usualInvoiceType{ /*margin:10px 0;*/ height:30px; line-height:30px;}
+.usualInvoiceType li{ float:left; display:inline;height:30px; line-height:30px; *margin-top:8px;}
+
+/*保存按钮*/
+.form-btn {
+padding-top: 10px;
+clear: both;
+}
+a.btn-submit, #checkout a.btn-submit:visited, #checkout a.btn-submit:hover {
+color: #fff;
+text-decoration: none;
+}
+.btn-submit {
+background: url("../images/btn-red.png") no-repeat;height: 30px;
+margin-right: 10px;
+padding-left: 20px;
+float: left;
+line-height: 30px;
+font-size: 14px;
+font-weight: 700;
+}
+div.orderInfo .snc_select dd.noselect .btn-submit span{
+background: url("../images/btn-red.png") no-repeat 100% -30px;height: 30px;height: 30px;
+padding-right: 20px;
+float: left;
+cursor: pointer; color:#fff;
+}
+
+.vm{vertical-align:middle;}
+
+/*********开发票*************/
+div.orderInfo .bill dd.selected label {
+	border: none;
+}
+div.orderInfo .bill dd:hover label {
+	border: none;
+}
+div.orderInfo .bill dd .need{margin-left:45px}
+div.orderInfo .bill dd label {
+	
+	border: none;float:left;height:20px;line-height:20px;padding:4px 8px
+}
+div.orderInfo .bill dd input{margin-top:4px}
+div.orderInfo .bill dd span.weight{font-weight:600;font-size:14px;font-family:"微软雅黑";text-indent:2em;width:90%;line-height:30px;}
+div.orderInfo .bill dd span.fp_content{width:100px;}
+div.orderInfo .bill dd:hover{border:5px solid #fff;}
+div.orderInfo .bill dd label.bd_box{height:30px;line-height:30px}
+div.orderInfo .bill dd label.bd_box input.tex-176{height:20px;
+	line-height:20px;
+	border:1px solid #ddd;
+	width:176px;
+	padding:3px 5px;
+	  -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color:#ccc #E1E1E1 #E1E1E1 #ccc;
+    border-image: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.125) inset;
+    color: #666666;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;margin-top:-2px}
+
+div.orderInfo .bill dd{border-bottom-color:#fff}
+div.orderInfo .bill p.red_font{color:#e60012;margin:0 10px 0 26px;text-align:left}
+div.orderInfo .bill p.red_font a{color:#666;font-style:normal}
+div.orderInfo .bill .details_position{position:relative;border:1px solid #e4e4e4;margin:0 25px;padding:20px;}
+div.orderInfo .bill p.bill_details{min-height:80px;font-family:"微软雅黑"}
+div.orderInfo .bill .details_position i{background:url(../images/fp_arrow.png) no-repeat;width:26px;height:11px;position:absolute;left:46%;top:-11px}

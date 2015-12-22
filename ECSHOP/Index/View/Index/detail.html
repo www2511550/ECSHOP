@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手机详情</title>
+	<link rel="stylesheet" href="__CONTROLLER_VIEW__/css/detail.css">
+	<link rel="stylesheet" href="__CONTROLLER_VIEW__/css/header_bottom.css">
+	<script type="text/javascript" src="__CONTROLLER_VIEW__/js/jquery172.js"></script>
+	<script type="text/javascript" src='__CONTROLLER_VIEW__/js/detail.js'></script>
+	<script type="text/javascript" src='__CONTROLLER_VIEW__/js/index.js'></script>
+	<hdjs/>
+</head>
+<body>
+<!-- 头部区块 -->
+<include file='__CONTROLLER_VIEW__/block/header.html' />
+<!-- 头部区块结束 -->
+
+<!-- 路径 -->
+<div class="position">
+	<a href="__ROOT__">首页</a><span> > </span>{$goods_data.goods_key}
+</div>
+<!-- 路径 -->
+ 
+
+ <!-- 手机展示区块 -->
+<div class="p_box">
+	<!-- 左边区块 -->
+
+	<div class="left_area">
+		<ul class="l_img">
+		<!-- 图片展示 -->
+		<list from='$goods_gallery' name='$g'>
+			<li  <if value='$hd.list.g.first'> style='display:block'</if> >
+				<img src="__ROOT__/{$g.img_url}">
+			</li>
+		</list>
+		</ul>
+		
+		<ol class="ol_min_img">
+		<list from='$goods_gallery' name='$g'>
+			<li <if value='$hd.list.g.first'> class="ol_img_cur"</if> >
+				<a href="javascript:;"><img src="__ROOT__/{$g.thumb_url}"></a>
+			</li>
+		</list>
+		</ol>
+	
+		<span class='ol_span_l'></span><span class='ol_span_r'></span>
+	</div>
+	<!-- 左边区块结束 -->
+	<!-- 右边区块 -->
+	<div class="right_area">
+		<!-- 标题 -->
+		<h1>{$data.goods_name}</h1>
+		<div class="t_red">
+			{$data.goods_title}
+		</div>
+		<div class="h_10"></div> 
+		<!-- 价格区块 -->
+		<div class="r_price">
+			<label for="">华 为&nbsp;  价：</label>
+			<b>¥ {$data.goods_price}</b>
+		</div>
+		<div class="bianma">
+			<label>商品编码：</label>
+			<span>&nbsp;{$data.goods_sn}</span>
+		</div>
+		<div class="bianma">
+			<label>商品评分 :</label>
+			<span>&nbsp;<b></b>（共 {$data.goods_number} 条评论）</span>
+		</div>
+		<div class="bianma">
+			<label>运&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;费 :</label>
+			<span>&nbsp;满 100 免运费</span>
+		</div>
+		<div class="bianma">
+			<label>服&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务 :</label>
+			<span>&nbsp;由华为商城负责发货，并提供售后服务</span>
+		</div>
+		<div class="h_10"></div>
+		<!-- 参数区块 -->
+	<form id="form_buy">
+		<div class="select">
+		<list from='$goods_attr' name='$ga'>
+				<dl class="sel_txt">
+					<dt>{$ga.attr_name}  :&nbsp;&nbsp;&nbsp;</dt>
+					<dd>
+						<ol>
+						<list from='$ga.value' name='$v'>
+							<li>
+								<a href="javascript:;" onclick='addCur(this)' id='{$v.id}'>{$v.attr_value}<i></i></a>
+							</li>
+						</list>
+						</ol>
+					</dd>
+				</dl>
+		</list>	
+		</div>
+		<div class="buy_num">
+			<dl>
+				<dt>购买数量 :&nbsp;&nbsp;&nbsp;</dt>
+				<dd> 
+					<a href="javascript:;" onclick="changeNum(this)" tp="1">-</a>
+					<input type="text" value="1" class="num_ipt" name="num" onkeyup="changeNum(this)"  onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" proNum='1'>
+					<a href="javascript:;" onclick="changeNum(this)" tp="2">+</a>
+				</dd>
+			</dl>
+		</div>
+		<!-- 购买 -->
+		<div class="r_buy">
+			<p>您选择了<span class='you_select0'></span><span class='you_select1'></span><span class='you_select2'></span></p>
+			<input type="submit" value="加入购物车"><span class='msg'></span>
+		</div>
+		<!-- 购买成功 -->
+		<div class="hd_buy_success">
+			<a href="javascript:;" class="success_close">x</a>
+			<dl>
+				<dt><b></b></dt>
+				<dd>
+					<p><?php echo mb_substr($data['goods_name'],0,15,'utf8'); ?></p>
+					<div class="succuss_msg">成功加入购物车!</div>
+					<div class="success_total">
+						购物车中共 <span class='sp_num'>0</span> 件商品，金额合计 <span class='sp_total'>0.00</span>
+					</div>
+					<div class="success_botton">
+						<a href="{|U:'Index/acount'}" class="ipt_suan">去结算</a>
+						<a href="javascript:;" class="ipt_buy">继续购物 >></a>
+					</div>
+				</dd>
+			</dl>	
+		</div>
+	</form>
+	</div>
+	<!-- 右边区块结束 -->
+</div>
+
+<!-- 手机展示区块结束 -->
+
+<!-- 产品详情介绍区块 -->
+
+
+<div class="big">
+<!-- 浏览记录 -->
+	<div class="l_box">
+		<div class="l_title">浏览记录</div>
+		<ul>
+		<list from='$history' name='$h'>
+			<li>
+				<img src="__ROOT__/{$h.goods_thumb}" alt="" width="60px" height="60px">
+				<p class="l_p_title">
+					<a href="{|U:'detail',array('goods_id'=>$h['goods_id'])}" target="_blank">
+						<?php $t=explode('_',$h['goods_index_title']);echo $t[0]; ?>
+						<?php  echo mb_substr($t[1],0,15,'utf8');?>
+					</a>
+				</p>
+				<p class="l_p_price">
+					¥<b>{$h.goods_price}</b>
+				</p>
+			</li>
+		</list>
+		</ul>
+	</div>
+<!-- 浏览记录结束 -->
+
+<!-- 右边区块 -->
+	<div class="r_box">
+		<!-- big的标题 -->
+		<div class="b_title">
+			<ul>
+				<li class="b_cur"><a href="javascript:;">商品详情</a></li>
+				<li><a href="javascript:;">规格参数</a></li>
+				<li><a href="javascript:;">包装清单</a></li>
+				<li><a href="javascript:;">售后服务</a></li>
+				<li><a href="javascript:;">用户评价(233)</a></li>
+			</ul>
+		</div>
+	<!-- 产品介绍区块 -->
+		<div class="box">
+		<!-- 商品详情 -->
+			<div class="pro_detail">
+				{$goods_data.goods_body}
+
+				<div class="word">
+					<p>
+					※本网站尽可能地提供准确的信息。本网站内所涉及的产品图片与实物可能有细微区别，效果演示图和示意图仅供参考（图片为合成图、模拟演示图），有关产品的外观（包括但不限于颜色）请以实物为准。
+					</p>
+					<p>
+					※限于篇幅，本网站中所包含的信息（包括但不限于产品规格、功能说明等）可能不完整，请以有关产品使用说明书的具体信息为准。	
+					</p>
+				</div>	
+			</div>
+		<!-- 商品详情结束 -->
+
+		<!-- 规格参数 -->
+			<div class="canshu">
+				<table>
+					<tr>
+						<th>主体</th>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="td_title">商品</td>
+						<td>{$data.goods_name}</td>
+					</tr>
+				<list from='$canshu' name='$cs'>
+					<tr>
+						<td class="td_title">{$cs.attr_name}</td>
+						<td>{$cs.attr_value}</td>
+					</tr>
+				</list>
+				</table>
+			</div>
+		<!-- 规格参数结束 -->
+
+		<!-- 包装清单 -->
+			<div class="qingdan">
+				<p>手机（含内置电池） x 1，充电器 x 1，USB线 x 1，耳机 x 1，卡座捅针 x 1，快速指南 x 1，安全说明 x 1，保修卡 x 1</p>
+			</div>
+		<!-- 包装清单结束 -->
+
+		<!-- 售后服务 -->
+			<div class="shouhou">
+				<p>本产品全国联保，享受三包服务，质保期为：一年质保 </p>
+				<p>如因质量问题或故障，凭厂商维修中心或特约维修点的质量检测证明，7日内退/换货或维修，15日内换货或维修，15日以上在质保期内享</p>
+				<p>受免费保修等三包服务！</p>
+				<p>售后服务电话：400-830-8300</p>
+				<p>华为消费者BG官网： http://consumer.huawei.com/cn/</p>
+			</div>
+		<!-- 售后服务结束 -->
+		<!-- 用户评价 -->
+			<div class="pingjia">
+				暂无评价...
+			</div>
+		<!-- 用户评价结束 -->
+		</div>
+	<!-- 产品介绍区块结束 -->
+	</div>
+</div>
+
+<!-- 产品详情介绍区块结束 -->
+
+<!-- 底部区块 -->
+<include file='__CONTROLLER_VIEW__/block/bottom.html' />
+<!-- 底部区块结束 -->
+
+
+	
+</body>
+</html>

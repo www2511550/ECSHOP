@@ -1,0 +1,143 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background: #D4D4D3 url(../images/login/bg9.jpg) scroll
+		no-repeat center 0;
+}
+/*头部区块*/
+.top{
+	width: 1002px;
+	height: 43px;
+	padding-top: 35px;
+	margin: 0 auto;
+}
+.top>img{
+	float: left;
+}
+.top>span{
+	float: left;
+	line-height: 43px;
+	font-size: 22px;
+	color: #777;
+	font-family: 微软雅黑;
+	padding-left: 10px;
+}
+/*头部区块结束*/
+.main{
+	width: 1002px;
+	height: auto;
+	margin: 0 auto;
+}
+/*左边区块*/
+.main .left{
+	width: 570px;
+	height: 529px;
+	background-position: 64px 0;
+    margin-left: 50px;
+    margin-top: 40px;
+    float: left;
+    background: url(../images/login/bg11.jpg) no-repeat;
+}
+/*右边区块*/
+.main .right{
+	width: 320px;
+	height: 500px;
+	float: left;
+	margin-top: 40px;
+	padding-left: 60px;
+	padding-top: 29px;
+	font-family: Arial,​Helvetica,​sans-serif;
+	position: relative;
+}
+.main .right>h3{
+	float: left;
+	font-size: 23px;
+	color: #EA5E00;
+	padding-bottom: 30px;
+}
+.main .right>label{
+	display: inline-block;
+	width: 280px;
+	height: 34px;
+	padding: 10px 0;
+}
+.main .right>label>input{
+	width: 239px;
+	height: 20px;
+	padding: 6px;
+	border: 1px solid #BCBCBC;
+	border-radius: 4px;
+	float: left;
+	color: #cccccc;
+}
+.main .right .yzm{
+	width: 280px;
+	height: 80px;
+	float: left;
+	margin-top: 20px;
+}
+.main .right .yzm>input{
+	width: 96px;
+	height: 20px;
+	padding: 6px;
+	border: 1px solid #BCBCBC;
+	float: left;
+	margin-top: 24px;
+	color: #ccc;
+}
+.main .right .yzm>img{
+	width: 130px;
+	height: 60px;
+	margin-top: 10px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.main .right .check{
+	width: 280px;
+	height: 19px;
+	float: left;
+	margin-top: 10px;
+	line-height: 12px;
+	font-size: 12px;
+	line-height: 19px;
+	color: #5C5C5C;
+}
+.main .right .check>input{
+	margin-top: 3px;
+}
+.main .right .check>a{
+	float: right;
+	color: #929292;
+}
+.main .right .check>a:hover{
+	text-decoration: underline;
+}
+
+.main .right .login{
+	background-color: rgb(180, 7, 7);
+    border-color: rgb(180, 7, 7);
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 0 0 2px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    height: 42px;
+    padding: 7px 25px;
+    text-align: center;
+    width:93px;
+    margin-top: 50px;
+}
+.main .right .zhuce{
+	line-height: 16px;
+	font-size: 14px;
+	color: #EA5E00;
+	text-decoration: none;
+	margin-left: 20px;
+}
+.main .right .zhuce:hover{
+	text-decoration: underline;
+}

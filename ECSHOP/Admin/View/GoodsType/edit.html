@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加商品</title>
+	<hdjs />	
+</head>
+<body>
+<div class="wrap">
+	<div class="title-header">添加商品</div>
+	<form action="" method="post">	
+		<input type="hidden" name='cat_id' value="{$data.cat_id}">
+		<table class="table2 hd-form">
+			<tr>
+				<th class="w100">商品名称</th>
+				<td><input type="text" name="cat_name" value="{$data.cat_name}"></td>
+			</tr>
+		</table>
+		<input type="submit" class="hd-success" value="添加">
+	</form>
+</div>
+</body>
+</html>

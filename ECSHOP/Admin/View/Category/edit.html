@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>编辑栏目</title>
+	<hdjs />	
+</head>
+<body>
+<div class="wrap">
+	<div class="title-header">栏目编辑</div>
+	<form action="" method="post">	
+		<input type="hidden" name='cid' value="{$data.cid}">
+		<table class="table2 hd-form">
+			<tr>
+				<th class="w100">名称</th>
+				<td><input type="text" name="cat_name" value="{$data.cat_name}"></td>
+			</tr>
+			<tr>
+				<th class="w100">父级</th>
+				<td>
+					<select name="pid">
+						<option value="0" selected=''>顶级</option>
+					<list from='$category' name='$c'>
+						<option value="{$c.cid}" <if value="{$c.cid}=={$data.pid}">selected=''</if>>{$c._name}</option>
+					</list>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th class="w100">栏目类型</th>
+				<td>
+					<select name="cat_id">
+						<option value="0">**选择栏目**</option>
+					<list from='$goods_type' name='$gt'>
+						<option value="{$gt.cat_id}" <if value="{$gt.cat_id}=={$data.cat_id}">selected=''</if>>{$gt.cat_name}</option>
+					</list>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th class="w100">状态</th>
+				<td>
+					<label><input type="radio" name="is_show" value="1" <if value="{$data.is_show}==1">checked=''</if> >显示</label>
+					<label><input type="radio" name="is_show" value="0" <if value="{$data.is_show}==0">checked=''</if> >隐藏</label>
+				</td>
+			</tr>
+			<tr>
+				<th class="w100">单位</th>
+				<td><input type="text" name="measure_unit" value="{$data.measure_unit}"></td>
+			</tr>
+			<tr>
+				<th class="w100">价格区间</th>
+				<td><input type="text" name="grade" value="{$data.grade}"></td>
+			</tr>
+			<tr>
+				<th class="w100">关键字</th>
+				<td><input type="text" name="cat_key" value="{$data.cat_key}"></td>
+			</tr>
+			<tr>
+				<th class="w100">描述</th>
+				<td><textarea name="cat_desc" class="w200 h80">{$data.cat_desc}</textarea></td>
+			</tr>
+		</table>
+		<input type="submit" class="hd-success" value="确认">
+	</form>
+</div>
+</body>
+</html>

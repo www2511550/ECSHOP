@@ -1,0 +1,131 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background: #D4D4D3 url(../images/login/bg10.jpg) scroll
+		no-repeat center 0;
+}
+/*头部区块*/
+.top{
+	width: 1002px;
+	height: 43px;
+	padding-top: 35px;
+	margin: 0 auto;
+}
+.top>img{
+	float: left;
+}
+.top>span{
+	float: left;
+	line-height: 43px;
+	font-size: 22px;
+	color: #777;
+	font-family: 微软雅黑;
+	padding-left: 10px;
+}
+/*头部区块结束*/
+.main{
+	width: 791px;
+	height: 500px;
+	background: #fff;
+	margin: 20px auto;
+	border: 1px solid #EFEFEF;
+	position: relative;
+}
+.main h2{
+	padding-left: 220px;
+	padding-top: 43px;
+	line-height: 29px;
+	padding-bottom: 14px;
+	color: #B90006;
+	font-size: 30px;
+	font-weight: 400;
+}
+.main table tr{
+	height: 64px;
+	padding: 10px 0;
+}
+.main table tr th{
+	font-weight: 400;
+	width: 218px;
+	height: 34px;
+	line-height: 34px;
+	text-align: right;
+	font-size: 14px;
+	color: #838282;
+}
+.main table tr td>input{
+	width: 239px;
+	height: 20px;
+	padding: 6px;
+	border: 1px solid #BCBCBC;
+	color: #ccc;
+	border-radius: 4px;
+	margin-left: 5px;
+}
+.main table tr td>input.yzm{
+	width: 96px;
+	height: 20px;
+	padding: 6px;
+	border: 1px solid #BCBCBC;
+	float: left;
+	color: #ccc;
+	margin-top: 20px;
+}
+.main table tr td>img{
+	width: 130px;
+	height: 60px;
+	margin-top: 10px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.zhuce{
+	width: 140px;
+	height: 35px;
+	background: #FF8924;
+	border: none;
+	border-radius: 2px;
+	color: #fff;
+	font-size: 18px;
+	cursor: pointer;
+	position: absolute;
+	left: 220px;
+	bottom: 50px;
+}
+.img{
+	width: 226px;
+	height: 135px;
+	background: url(../images/login/bg14.png);
+	position: absolute;
+	left: -40px;
+	bottom: -20px;
+}
+.login{
+	width: 165px;
+	height: 30px;
+	position: absolute;
+	right: 5px;
+	bottom: -6px;
+	font-size: 12px;
+	line-height: 30px;
+	color: #666;
+}
+.login>a{
+	display:inline-block;
+	width: 30px;
+	height: 26px;
+	padding: 0 30px;
+	background: #C5C5C5;
+	color: #fff;
+	float: right;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 26px;
+	border-radius: 2px;
+	text-decoration: none;
+}
+.login>a:hover{
+	text-decoration: underline;
+}

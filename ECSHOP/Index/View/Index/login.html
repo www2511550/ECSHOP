@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<link rel="stylesheet" href="__CONTROLLER_VIEW__/css/login.css">
+	<hdjs/>
+	<script type="text/javascript" src='__CONTROLLER_VIEW__/js/validate.js'></script>
+</head>
+<body>
+<!-- 头部区块 -->
+<div class="top">
+	<img src="__CONTROLLER_VIEW__/images/login/logo2.png" alt=""><span>|</span><span>&nbsp;华为商城</span>
+</div>
+<!-- 头部区块结束 -->
+
+<div class="main">
+	<!-- 左边区块 -->
+	<div class="left"></div>
+	<!-- 右边区块 -->
+<form action="{|U:'Index/login',array('s'=>$s)}" method="post">
+	<div class="right">
+		<h3 style="font-family:'宋体'">欢迎登录华为帐号</h3>
+		<label style="width:100%">
+			<input type="text" placeholder="手机号/邮箱/用户名" name="username" onblur="validate(this,5,50)" login='1'>
+			<span style='padding:0 5px;font-size:12px;' class='ps'></span>
+		</label>
+		<label  style="width:100%">
+			<input type="password" placeholder="密码 (6~32 个字符)" name="password" onblur="validate(this,6,32)">
+			<span style='padding:0 5px;font-size:12px;' class='ps'></span>
+		</label>
+		<div class="yzm" style="width:100%">
+			<input type="text" placeholder="不区分大小写" name="code">
+			<img src="{|U:'code'}" onclick="this.src='{|U:'code'}&'+Math.random();">
+			<span style='font-size:12px;' class='ps'></span>
+		</div>
+		<div class="check">
+			<input type="checkbox" checked="">&nbsp;&nbsp;记住用户名<a href="javascript:;">忘记密码?</a>
+		</div>
+		<input type="submit" class="login" value="登录">
+		<a href="{|U:'Index/zhuce'}" class="zhuce">免费注册</a>
+	</div>
+</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加栏目</title>
+	<hdjs />	
+</head>
+<body>
+<div class="wrap">
+	<div class="menu_list">
+		<ul>
+			<li><a href="{|U:'index'}">栏目列表</a></li>
+		</ul>
+	</div>
+	<div class="title-header">添加栏目</div>
+	<form action="" method="post">	
+		<table class="table2 hd-form">
+			<tr>
+				<th class="w100">名称</th>
+				<td><input type="text" name="cat_name"></td>
+			</tr>
+			<tr>
+				<th class="w100">顶级</th>
+				<td>
+					<select name="pid">
+						<option value="0">顶级</option>
+					<list from='$category' name='$c'>
+						<option value="{$c.cid}">{$c._name}</option>
+					</list>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th class="w100">栏目类型</th>
+				<td>
+					<select name="cat_id">
+						<option value="0">**选择栏目**</option>
+					<list from='$goods_type' name='$gt'>
+						<option value="{$gt.cat_id}">{$gt.cat_name}</option>
+					</list>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th class="w100">状态</th>
+				<td>
+					<label><input type="radio" name="is_show" value="1" checked="">显示</label>
+					<label><input type="radio" name="is_show" value="0">隐藏</label>
+				</td>
+			</tr>
+			<tr>
+				<th class="w100">单位</th>
+				<td><input type="text" name="measure_unit" value="件"></td>
+			</tr>
+			<tr>
+				<th class="w100">价格区间</th>
+				<td><input type="text" name="grade"></td>
+			</tr>
+			<tr>
+				<th class="w100">关键字</th>
+				<td><input type="text" name="cat_key"></td>
+			</tr>
+			<tr>
+				<th class="w100">描述</th>
+				<td><textarea name="cat_desc" class="w200 h80"></textarea></td>
+			</tr>
+		</table>
+		<input type="submit" class="hd-success" value="添加">
+	</form>
+</div>
+</body>
+</html>

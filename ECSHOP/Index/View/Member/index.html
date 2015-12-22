@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>会员中心</title>
+	<link rel="stylesheet" href="__CONTROLLER_VIEW__/css/member.css">
+	<link rel="stylesheet" href="__CONTROLLER_VIEW__/css/header_bottom.css">
+	<hdjs/>
+	<script type="text/javascript" src='__CONTROLLER_VIEW__/js/index.js'></script>
+</head>
+<body>
+<!-- 头部区块 -->
+<include file='__CONTROLLER_VIEW__/block/header.html'/>
+<!-- 头部区块结束 -->
+
+<!-- 路径 -->
+<div class="position">
+	<i>你现在的位置 :</i> <a href="__ROOT__">首页</a><span> > </span>个人中心
+</div>
+<!-- 路径 -->
+<!-- 中间大区 -->
+<div class="main_out">
+	<!-- 左边列表区块 -->
+	<include file='__CONTROLLER_VIEW__/block/left.html'/>
+	<!-- 左边列表区块结束 -->
+	<!-- 右边区块 -->
+	<div class="right">
+		<div class="pic">
+			<img src="__CONTROLLER_VIEW__/images/member/pic_vip.jpg" alt="">
+		</div>
+
+		<div class="r_list">
+			<table>
+				<thead>
+					<tr>
+						<th><span>{$_SESSION['username']}</span> 欢迎您！</th>
+						<td></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>我的经验值 :</th>
+						<td><span>0</span></td>
+					</tr>
+					<tr>
+						<th>我的特权 :</th>
+						<td>无</td>
+					</tr>
+					<tr>
+						<th>优惠卷 :</th>
+						<td><span>0</span>张</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- 订单消息 -->
+		<!-- 欢迎界面 -->
+		<div class="msg">
+			<dl>
+				<dt>订单中心: </dt>
+				<dd><a href="">处理中的订单(<span>0</span>)</a></dd>
+				<dd><a href="">待评价的商品(<span>0</span>)</a></dd>
+			</dl>
+			<dl>
+				<dt>站内消息: </dt>
+				<dd><a href="">新消息(<span>0</span>)</a></dd>
+			</dl>
+		</div>
+		<!-- 欢迎界面结束 -->
+	</div>
+	<!-- 右边区块结束 -->
+
+</div>
+<!-- 中间大区结束 -->
+
+
+<!-- 底部区块 -->
+<include file='__CONTROLLER_VIEW__/block/bottom.html' />
+<!-- 底部区块结束 -->
+</body>
+</html>

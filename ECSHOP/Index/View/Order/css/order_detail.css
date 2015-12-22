@@ -1,0 +1,224 @@
+* {
+  font-family: "微软雅黑";
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  color: #E01D20;
+}
+/*头部灰色区块*/
+.top_out{
+  height: 30px;
+  width: 100%;
+  border-bottom: 1px solid #EDEDED;
+  background: #FAFAFA;
+  color: #8B8B8B;
+}
+.top_out .top{
+  width: 1000px;
+  height: 16px;
+  margin: 0 auto;
+  padding: 7px 0;
+}
+.top_out .top .t_right{
+  float: right;
+}
+.top_out .top .t_right>span{
+  padding: 0 10px;
+  color: #c8c8c8;
+}
+/*头部灰色区块结束*/
+
+/*流程图区块*/
+.search_out{
+  width: 1200px;
+  height: 106px;
+  margin: 0 auto;
+}
+.search_out .logo{
+  width: 345px;
+  padding-top: 36px;
+  float: left;
+}
+.search_out .liucheng{
+  width: 570px;
+  height: 34px;
+  padding-top: 36px;
+  overflow: hidden;
+  float: right;
+}
+.search_out .liucheng>div{
+  width: 570px;
+  height: 34px;
+  float: left;
+}
+.search_out .liucheng .lc1{
+  background: url(../img/car.png) 0 0 no-repeat;
+}
+.search_out .liucheng .lc2{
+  background: url(../img/car.png) 0 -45px no-repeat;
+}
+.search_out .liucheng .lc3{
+  background: url(../img/car.png) 0 -88px no-repeat;
+}
+/*流程图区块结束*/
+
+
+.box {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.box .box_detail {
+  width: 1200px;
+  height: auto;
+  position: relative;
+  background: #F1F8EE;
+  margin-bottom: 35px;
+}
+.box .box_detail .h {
+  width: 1035px;
+  height: 116px;
+  padding: 0 0 21px 165px;
+  border-top: 2px solid #7ABD54;
+}
+.box .box_detail .h s {
+  display: inline-block;
+  width: 72px;
+  height: 72px;
+  background: #F1F8EE url(../img/order.png) 0 0 no-repeat;
+  position: absolute;
+  left: 65px;
+  top: 35px;
+}
+.box .box_detail .h h3 {
+  color: #7baa61;
+  font-size: 18px;
+  padding: 27px 0 2px;
+  font-weight: 400;
+}
+.box .box_detail .h p {
+  color: #777;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.box .box_detail .h p b {
+  color: #e01d20;
+  font-size: 14px;
+  padding-left: 5px;
+}
+.box .box_detail .h p b.time {
+  color: #777777;
+}
+.box .box_detail .b {
+  background-color: #f1f8ee;
+  line-height: 22px;
+  margin-top: 8px;
+  padding: 0 0 17px 165px;
+  color: #777777;
+  font-size: 12px;
+  display: none;
+}
+.box .box_detail .b table tr td span.bianhao {
+  color: #E01D20;
+}
+.box .box_detail .f {
+  width: 1200px;
+  height: 34;
+  border-top: 1px solid #d7ebcb;
+  background: #fff;
+}
+.box .box_detail .f a {
+  border-style: solid;
+  border-width: 1px;
+  color: #649a45;
+  display: block;
+  font-size: 14px;
+  width: 108px;
+  height: 32px;
+  line-height: 30px;
+  margin: -1px auto 0;
+  position: relative;
+  text-indent: 31px;
+  background: #F1F8EE;
+  text-decoration: none;
+  border-color: #d7ebcb;
+  border-top: none;
+}
+.box .order_pay {
+  width: 1200px;
+  height: auto;
+  font-size: 14px;
+  margin-bottom: 100px;
+}
+.box .order_pay .pay_title {
+  width: 1190px;
+  padding-left: 6px;
+  border-left: 4px solid #E5E5E5;
+  height: 15px;
+  line-height: 1.1;
+}
+.box .order_pay .pay_area {
+  width: 1198px;
+  height: 120px;
+  border: 1px solid #DEDEDE;
+  margin-top: 15px;
+}
+.box .order_pay .pay_area h4 {
+  background-color: #fcfcfc;
+  border-bottom: 1px solid #dedede;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-weight: 400;
+}
+.box .order_pay .pay_area .st {
+  padding: 30px 0 0 25px;
+  position: relative;
+}
+.box .order_pay .pay_area .st ul li {
+  list-style: none;
+  float: left;
+  padding-bottom: 20px;
+  width: 167px;
+  position: relative;
+}
+.box .order_pay .pay_area .st ul li img {
+  width: 107px;
+  height: 32px;
+  border: 1px solid #ededed;
+  cursor: pointer;
+  position: absolute;
+  left: 22px;
+  top: 0;
+}
+.box .order_pay .pay_area .st ul li img:hover{
+  border: 1px solid #BF0F0F;
+}
+.box .order_pay .pay_area .st ul li>label{
+  width: 100%;
+}
+.box .order_pay .pay_area .st ul li>label>input{
+  margin-right: 5px;
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+
+.box a.sbt{
+  display: block;
+  font-size: 16px;
+  height: 35px;
+  line-height: 33px;
+  width: 148px;
+  background: #D81B24;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  bottom: -60px;
+}

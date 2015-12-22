@@ -1,0 +1,27 @@
+	<!-- 左边列表区块 -->
+	<div class="left">
+		<div class="l_title">
+			会员中心
+		</div>
+		<div class="list">
+			<ul>
+				<li><h3>订单中心</h3></li>
+				<li>
+					<a href="{|U:'Member/order'}" <if value="{$_GET['a']}==order" >style="color:#F96209"</if>>> 我的订单</a>
+				</li>
+			</ul>
+			<ul>
+				<li><h3>个人中心</h3></li>
+				<li>
+					<a href="{|U:'Member/message'}" <if value="{$_GET['a']}==message" >style="color:#F96209"</if>>> 会员信息</a>
+				</li>
+				<li>
+					<a href="{|U:'Member/shengyu'}" <if value="{$_GET['a']}==shengyu" >style="color:#F96209"</if> >> 账户余额</a>
+				</li>
+				<li>
+					<a href="{|U:'Member/address'}" <if value="{$_GET['a']}==address" >style="color:#F96209"</if>>> 收货信息</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 左边列表区块结束 -->

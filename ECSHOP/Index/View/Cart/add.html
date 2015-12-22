@@ -1,0 +1,19 @@
+<div class="cart_div"> 
+					<ul>
+				<list from='$hd.session.cart.goods' name='$c'>
+						<li>
+							<img src="__ROOT__/{$c.goods_thumb}" alt="">
+							<p><a href="{|U:'detail',array('goods_id'=>$c['goods_id'])}">{$c.goods_name}</a></p>
+							<span style='color:#E01D4C;padding:10px 0 0 5px;'>¥ {$c.goods_price} </span> 
+							<span style='padding:10px 0 0 5px;'>x {$c.num}</span>
+							<span style='padding:10px 30px 0 5px;float:right'>{$c.attr}</span>
+							<i class="close" onclick='delCart(this,"{$c.cartId}")'>X</i>
+						</li>
+				</list>
+					</ul>
+					<div class="total">
+						<p>共<span style='color:#E01D4C;padding:2px 5px' class='span_num'>{$hd.session.cart.total_num}</span>件商品</p>
+						<p>共计<span class='total_price'>¥ <?php echo number_format($_SESSION['cart']['total'],2); ?></span></p>
+						<a href="{|U:'Index/acount'}" class="a_jiesuan">结算</a>
+					</div>
+				</div>

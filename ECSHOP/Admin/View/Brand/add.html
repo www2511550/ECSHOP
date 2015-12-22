@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加品牌</title>
+	<hdjs />	
+</head>
+<body>
+<div class="wrap">
+	<div class="menu_list">
+		<ul>
+			<li><a href="{|U:'index'}">品牌列表</a></li>
+		</ul>
+	</div>
+	<div class="title-header">添加品牌</div>
+	<form action="" method="post">	
+		<table class="table2 hd-form">
+			<tr>
+				<th class="w100">品牌名称</th>
+				<td><input type="text" name="brand_name"></td>
+			</tr>
+			<tr>
+				<th class="w100">品牌logo</th>
+				<td>
+					<upload size='2' type='jpg,jpeg,png,gif' limit='1' name='brand_logo'/>
+				</td>
+			</tr>
+			<tr>
+				<th class="w100">品牌序号</th>
+				<td><input type="text" name="brand_order" value="50"></td>
+			</tr>
+		</table>
+		<input type="submit" class="hd-success" value="添加">
+	</form>
+</div>
+</body>
+</html>

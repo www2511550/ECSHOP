@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品列表</title>
+	<hdjs/>
+	<script type="text/javascript" src='__CONTROLLER_VIEW__/Js/index.js'></script>
+</head>
+<body>
+<div class="warp">
+	<div class="menu_list">
+		<ul>
+			<li><a href="{|U:'add'}">添加商品</a></li>
+			<li><a href="{|U:'recover'}">回收站</a></li>
+			<li>
+				<select name="goods_type" style="text-align:center" onchange="changeGoodsType(this)">
+					<option value="0">**选择类型**</option>
+				<list from='$goods_type' name='$gt'>
+					<option value="{$gt.cat_id}" <if value="{$gt.cat_id}==Q('cat_id')">selected=''</if> >{$gt.cat_name}</option>
+				</list>
+				</select>
+			</li>
+		</ul>
+	</div>
+	<table class="table2">
+		<thead>
+			<td class="w100">编号</td>
+			<td>商品名称</td>
+			<td>货号</td>
+			<td>价格</td>
+			<td>上架</td>
+			<td>热门</td>
+			<td>新品</td>
+			<td>精品</td>
+			<td>栏目</td>
+			<td class="w100">操作</td>
+		</thead>
+		<tbody>
+		<list from='$data' name='$d'>
+			<tr>
+				<td>{$d.goods_id}</td>
+				<td>{$d.goods_name}</td>
+				<td>{$d.goods_sn}</td>
+				<td>
+					<input type="text" value="{$d.goods_price}" class="price" onchange="changePrice(this)"
+						goodsId='{$d.goods_id}'>
+				</td>
+				<td><if value="{$d.is_on_sale}"> √ <else> × </if></td>
+				<td><if value="{$d.is_hot}"    > √ <else> × </if></td>
+				<td><if value="{$d.is_new}"    > √ <else> × </if></td>
+				<td><if value="{$d.is_best}"   > √ <else> × </if></td>
+				<td>{$d.cat_name}</td>
+				<td>
+					<a href="{|U:'edit',array('goods_id'=>$d['goods_id'])}">编辑</a> |
+					<a href="javascript:;" onclick="recover(this,{$d.goods_id},1)">加入回收站</a> |
+					<!-- <a href="{|U:'del',array('goods_id'=>$d['goods_id'])}" onclick="return confirm('该商品所有信息将被删除？')">删除</a> | -->
+					<a href="{|U:'Product/manage',array('goods_id'=>$d['goods_id'])}">货品</a>
+				</td>
+			</tr>
+		</list>
+		</tbody>
+	</table>
+	<style>
+		.page{float: right;margin-top: 15px;}
+		.page>strong{float: left;padding:4px}
+		.page>span{float: left;padding:4px}
+		.page>a{display: inline-block;float: left;padding:4px;}
+		input.price{
+			width: 50px;
+			line-height: 25px;
+			border: none;
+			color: #666;
+			text-align: center;
+		}
+	</style>
+	<div class="page">
+		{$page}
+	</div>
+</div>
+</body>
+</html>

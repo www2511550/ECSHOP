@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网站配置</title>
+	<hdjs />
+</head>
+<body>
+<div class="wrap">
+<form>
+	<table class="table2 hd-form">
+		<thead>
+			<tr style="text-align:left">
+				<th class="w150">标题</th>
+				<th>配置值</th> 
+			</tr>
+		</thead>
+		<tbody>
+		<list from='$config' name='$c'>
+			<tr style="text-align:left">
+				<td class="w150">{$c.title}</td>
+				<td>{$c._html}</td>
+			</tr>
+		</list>
+		</tbody>
+	</table>
+	<input type="submit" class="hd-success" value="修改">
+</form>
+<js file='__CONTROLLER_VIEW__/Js/js.js' />
+</div>	
+</body>
+</html>

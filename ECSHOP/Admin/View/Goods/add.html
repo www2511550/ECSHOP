@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加商品</title>
+	<hdjs />	
+</head>
+<body>
+<div class="tab">
+	<ul class="tab_menu">
+		<li lab="base">
+			<a> 基本设置 </a>
+		</li>
+		<li lab="other" class="action">
+			<a>其他</a>
+		</li>
+		<li lab="detail">
+			<a>详情</a>
+		</li>
+		<li lab="img">
+			<a>图片列表</a>
+		</li>
+		<li lab="goods">
+			<a>商品属性</a>
+		</li>
+	</ul>
+<form action="" method="post" enctype="multipart/form-data">
+	<div class="tab_content">
+		<!-- 基本设置 -->
+		 <div id="base">
+			 <table class="table1 hd-form">
+				<tr>
+				 	<th class="w100">商品名称</th>
+				 	<td>
+				 		<input type="text" name="goods_name"/>
+				 	</td>
+				</tr>
+				<tr>
+				 	<th class="w100">商品标题</th>
+				 	<td>
+				 		<input type="text" name="goods_title"/>
+				 	</td>
+				</tr>
+				<tr>
+				 	<th class="w100">首页标题</th>
+				 	<td>
+				 		<input type="text" name="goods_index_title"/>
+				 		<span color='#999'>首页标题与描述用"_"隔开</span>
+				 	</td>
+				</tr>
+				<tr>
+				 	<th class="w100">栏目</th>
+					<td>
+					 	<select name="category_cid" style="text-align:center">
+					 		<option value="0">**选择栏目**</option>
+					 	<list from='$category' name='$c'>
+					 		<option value="{$c.cid}">{$c._name}</option>
+					 	</list>
+					 	</select>
+					</td>
+				</tr>
+				<tr>
+				 	<th class="w100">商品货号</th>
+				 	<td>
+				 		<input type="text" name="goods_sn"/>
+				 	</td>
+				</tr>
+				<tr>
+				 	<th class="w100">属性</th>
+				 	<td>
+				 		<label><input type="checkbox" name="is_new" value="1" />新品</label>
+				 		<label><input type="checkbox" name="is_hot" value="1" />热销</label>
+				 		<label><input type="checkbox" name="is_best" value="1" />精品</label>
+				 		<label><input type="checkbox" name="is_index" value="1" />首页</label>
+				 	</td>
+				</tr>
+				<tr>
+				 	<th class="w100">图片</th>
+				 	<td>
+				 		<input type="file" name="original_img">
+				 	</td>
+				</tr>
+				<tr>
+				 	<th class="w100">状态</th>
+				 	<td>
+				 		<label><input type="radio" name="is_on_sale" value="1" checked="" />上架</label>
+				 		<label><input type="radio" name="is_on_sale" value="0" />下架</label>
+				 	</td>
+				</tr>
+				<tr>
+				 	<th class="w100">商城价</th>
+				 	<td>
+				 		<input type="text" name="goods_price"/>
+				 	</td>
+				</tr>
+				<tr>
+				 	<th class="w100">市场价</th>
+				 	<td>
+				 		<input type="text" name="market_price"/>
+				 	</td>
+				</tr>
+			</table>
+		 </div>
+		 <!-- 基本设置结束 -->
+		 <!-- 其他 -->
+		 <div id="other">
+		 	<table class="table1 hd-form">
+		 		<tr>
+		 			<th class="w100">重量</th>
+		 			<td>
+		 				<input type="text" name="goods_weight">
+		 				<select name="weight_unit">
+		 					<option value="0">千克</option>
+		 					<option value="1">克</option>
+		 					<option value="2">市斤</option>
+		 				</select>
+		 			</td>
+		 		</tr>
+		 		<tr>
+		 			<th class="w100">上架时间</th>
+		 			<td>
+		 				<input type="text" readonly="readonly" id="sale_time" name="sale_time"
+						value="{|date:'Y/m/d h:i:s'}" class="w150"/>
+						<script>
+						$('#sale_time').calendar({format: 'yyyy/MM/dd HH:mm:ss'});
+						</script>
+		 			</td>
+		 		</tr>
+		 		<tr>
+		 			<th class="w100">品牌</th>
+		 			<td>
+		 				<select name="brand_bid" style="text-align:center">
+		 					<option value="0">**选择品牌**</option>
+		 				<list from='$brand' name='$b'>
+		 					<option value="{$b.bid}">{$b.brand_name}</option>
+		 				</list>
+		 				</select>
+		 			</td>
+		 		</tr>
+		 		<tr>
+		 			<th class="w100">商品数量</th>
+		 			<td>
+		 				<input type="text" name="goods_number">
+		 			</td>
+		 		</tr>
+		 		<tr>
+		 			<th class="w100">查看</th>
+		 			<td>
+		 				<input type="text" name="goods_click">次
+		 			</td>
+		 		</tr>
+		 	</table>
+		 </div>
+		 <!-- 其他结束 -->
+		 <!-- 详情 -->
+		 <div id="detail">
+		 	<table class="table1 hd-form">
+		 		<tr>
+		 			<th class="w100">关键字</th>
+		 			<td>
+		 				<input type="text" name="goods_key">
+		 			</td>
+		 		</tr>
+		 		<tr>
+		 			<th class="w100">描述</th>
+		 			<td>
+		 				<textarea name="goods_desc" class="w200 h80"></textarea>
+		 			</td>
+		 		</tr>
+		 		<tr>
+		 			<th class="w100">详情</th>
+		 			<td>
+		 				<ueditor name='goods_body' width='800' height='150'/>
+		 			</td>
+		 		</tr>
+		 	</table>
+		 </div>
+		 <!-- 详情结束 -->
+		 <!-- 图片列表 -->
+		 <div id="img">
+		 	<table class="table1 hd-form">
+		 		<tr class="detail_tr">
+		 			<th class="w100">详情页图片</th>
+		 			<td>
+		 				<a href="javascript:;" class="detail_add">[+]</a>
+		 				<input type="file" name="img_original[]">
+		 			</td>
+		 		</tr>
+		 	</table>
+		 </div>
+		 <!-- 图片列表结束 -->
+		 <!-- 商品属性 -->
+		 <div id="goods">
+		 	<table class="table1 hd-form">
+		 		<tr>
+		 			<th class="w100">商品类型</th>
+		 			<td>
+		 				<select name="goods_type" style="text-align:center" onchange="GoodsAttr();">
+		 					<option value="0">**选择类型**</option>
+		 				<list from='$goods_type' name='$gt'>
+		 					<option value="{$gt.cat_id}">{$gt.cat_name}</option>
+		 				</list>
+		 				</select>
+		 			</td>
+		 		</tr>
+		 		<tr>
+		 			<th>属性</th>
+		 			<td>
+		 				<div class="attr">
+		 		
+			 			</div>
+		 			</td>
+		 		</tr>
+		 	</table>
+		 	
+		 </div>
+		<style>
+			span.title{display: inline-block;width: 120px;}
+		</style>
+		 <!-- 商品属性结束 --> 
+	</div>
+	<input type="submit" value="确认" class="hd-success">
+</form>
+<js file='__CONTROLLER_VIEW__/Js/add.js'/>
+</div>
+
+</body>
+</html>
